@@ -1,3 +1,4 @@
 import Layout from './Layout';
+import YoutubePlayer from './YoutubePlayer';
 
-export default Layout;
+export { Layout, YoutubePlayer };
