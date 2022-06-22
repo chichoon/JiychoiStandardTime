@@ -10,7 +10,7 @@ export interface ISong {
   id: string;
   date: string;
   recommended?: string;
-  tag: string[];
+  tagList: string[];
 }
 
 /*

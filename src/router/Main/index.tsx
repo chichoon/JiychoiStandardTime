@@ -10,7 +10,7 @@ const TEST_SONG = {
   comment: '좋은achime입니다 🌄',
   id: '3oBPGdOwbbc',
   date: '2021-08-29 07:10',
-  tag: ['excited'],
+  tagList: ['excited'],
 };
 
 const Main = () => {
