@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-import Layout from 'components';
+import { Layout } from 'components';
 import Main from './Main';
 
 const Router = () => {
