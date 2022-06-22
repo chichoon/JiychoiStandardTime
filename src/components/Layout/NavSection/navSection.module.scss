@@ -18,6 +18,9 @@
   margin-right: 16px;
 
   a {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: sizes.$FONT_SUBTITLE;
+    font-weight: 700;
     color: colors.$DARK30;
     transition: color 0.2s ease-in;
 
