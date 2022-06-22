@@ -10,6 +10,7 @@
   & > ul {
     @include flexbox.flexbox(center, center);
     width: 100%;
+    overflow: auto;
   }
 }
 
