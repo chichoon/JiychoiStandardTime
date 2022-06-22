@@ -1,0 +1,35 @@
+@use 'styles/constants/colors';
+@use 'styles/constants/levels';
+@use 'styles/constants/sizes';
+@use 'styles/mixins/flexbox';
+
+.layoutNavBar {
+  width: 100%;
+  margin-bottom: 16px;
+
+  & > ul {
+    @include flexbox.flexbox(center, center);
+    width: 100%;
+  }
+}
+
+.layoutNavElement {
+  margin-right: 16px;
+
+  a {
+    color: colors.$DARK30;
+    transition: color 0.2s ease-in;
+
+    &:hover {
+      color: colors.$DARK50;
+    }
+
+    &.isActive {
+      color: colors.$DARK;
+    }
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
