@@ -3,6 +3,8 @@
 
 .tag {
   @include flexbox.flexbox(center, center);
+  padding: 4px 12px;
   color: colors.$DARK;
-  background-color: colors.$LIGHT50;
+  background-color: colors.$MIDDLE50;
+  border-radius: 10px;
 }
