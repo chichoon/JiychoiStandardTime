@@ -4,15 +4,18 @@
 @use 'styles/mixins/flexbox';
 
 .playerComponentWrapper {
+  height: 100%;
   font-family: 'Nanum Myeongjo', serif;
   color: colors.$DARK;
 }
 
 .playerInformation {
+  height: calc(50% - 16px);
   padding: 0 8px;
+  margin-top: 16px;
 
   .playerDate {
-    margin: 16px 0 8px;
+    margin-bottom: 8px;
     font-size: sizes.$FONT_SMALL;
     font-style: italic;
     color: colors.$DARK50;
@@ -35,8 +38,9 @@
   }
 
   .playerComment {
-    max-height: 192px;
-    padding: 16px;
+    max-height: calc(100% - 78px - 23.5px);
+    padding: 8px 16px;
+    margin-bottom: 16px;
     overflow: auto;
     border: 1px solid colors.$DARK30;
     border-radius: 4px;
