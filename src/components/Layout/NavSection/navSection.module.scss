@@ -8,9 +8,11 @@
   margin: 20px 0;
 
   & > ul {
-    @include flexbox.flexbox(center, center);
+    @include flexbox.flexbox(center, start);
     width: 100%;
-    overflow: auto;
+    height: sizes.$FONT_SUBTITLE;
+    overflow-x: auto;
+    overflow-y: hidden;
   }
 }
 
