@@ -1,0 +1,8 @@
+@use 'styles/constants/colors';
+@use 'styles/mixins/flexbox';
+
+.tag {
+  @include flexbox.flexbox(center, center);
+  color: colors.$DARK;
+  background-color: colors.$LIGHT50;
+}

@@ -4,6 +4,7 @@ import dayjs from 'dayjs';
 import { ISong } from 'types/musics';
 
 import styles from './playerComponent.module.scss';
+import TagBox from './TagBox';
 
 interface IProps {
   song: ISong;
@@ -14,7 +15,7 @@ interface IProps {
 const PlayerComponent = ({ song, onEnded, loop }: IProps) => {
   return (
     <div className={styles.playerComponentWrapper}>
-      <h3 className={styles.playerComponentDate}>{`#${song.index} ${dayjs(song.date).format('YYYY년 MM월 DD일')}`}</h3>
+      <p className={styles.playerComponentDate}>{`#${song.index} ${dayjs(song.date).format('YYYY년 MM월 DD일')}`}</p>
       <ReactPlayer
         url={`https://www.youtube.com/watch?v=${song.id}`}
         loop={loop}
@@ -22,6 +23,12 @@ const PlayerComponent = ({ song, onEnded, loop }: IProps) => {
         width='100%'
         height='50%'
       />
+      <dl className={styles.playerInfo}>
+        <dt>{song.title}</dt>
+        <dd>{song.artist}</dd>
+      </dl>
+      <p className={styles.playerComment}>{song.comment}</p>
+      <TagBox tagList={song.tagList} />
     </div>
   );
 };
