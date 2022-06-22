@@ -1,7 +1,6 @@
 import cx from 'classnames';
 
 import { PlayerComponent } from 'components';
-import styles from './main.module.scss';
 
 const TEST_SONG = {
   index: 0,
