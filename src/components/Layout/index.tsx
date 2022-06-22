@@ -9,7 +9,8 @@ const Layout = () => {
       <div className={styles.layoutWrapper}>
         <img src='/main-image.gif' alt='main-profile' />
         <div className={styles.layoutContainer}>
-          <h1 className={styles.layoutHeader}>#지최표준시</h1>
+          <h1 className={styles.layoutHeader}>#지최표준시</h1>{' '}
+          <h3 className={styles.layoutSubHeader}>jiychoi standard time</h3>
           <NavSection />
           <Outlet />
         </div>

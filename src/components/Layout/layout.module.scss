@@ -13,7 +13,7 @@
 .layoutWrapper {
   @include flexbox.flexbox(center, center);
   flex-direction: column;
-  width: 90%;
+  width: 80%;
   max-width: 720px;
   height: 90%;
 
@@ -27,10 +27,24 @@
 .layoutContainer {
   width: 100%;
   height: calc(100% - sizes.$LAYOUT_IMAGE_SIZE / 2);
+  padding: sizes.$LAYOUT_PADDING;
   background-color: colors.$WHITE;
+  border-radius: sizes.$LAYOUT_BORDER_RADIUS;
+  box-shadow: 0 0 16px 4px colors.$LIGHT30;
 
   .layoutHeader {
-    font-family: Raleway, sans-serif;
+    margin-bottom: 4px;
+    font-family: 'Gowun Batang', serif;
     font-size: sizes.$FONT_TITLE;
+    color: colors.$DARK;
+    text-align: center;
+  }
+
+  .layoutSubHeader {
+    margin-bottom: 16px;
+    font-family: Raleway, sans-serif;
+    color: colors.$DARK50;
+    text-align: center;
+    letter-spacing: 0.5px;
   }
 }
