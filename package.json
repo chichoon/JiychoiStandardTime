@@ -42,6 +42,7 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "react-use": "^17.4.0",
+    "react-youtube": "^9.0.2",
     "sass": "^1.52.3",
     "store": "^2.0.12",
     "web-vitals": "^2.1.0"
