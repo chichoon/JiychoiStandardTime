@@ -10,14 +10,13 @@ const TEST_SONG = {
   comment: '좋은achime입니다 🌄',
   id: '3oBPGdOwbbc',
   date: '2021-08-29 07:10',
-  tagList: ['excited'],
+  tagList: ['excited', 'sad'],
 };
 
 const Main = () => {
   return (
     <div className={cx(styles.mainWrapper, 'innerContainer')}>
       <PlayerComponent song={TEST_SONG} loop />
-      이곳에선 가장 최근에 올라온 노래를 들려줘요.
     </div>
   );
 };
