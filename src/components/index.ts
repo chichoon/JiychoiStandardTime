@@ -1,4 +1,4 @@
 import Layout from './Layout';
-import YoutubePlayer from './YoutubePlayer';
+import PlayerComponent from './PlayerComponent';
 
-export { Layout, YoutubePlayer };
+export { Layout, PlayerComponent };

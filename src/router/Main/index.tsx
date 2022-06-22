@@ -1,6 +1,6 @@
 import cx from 'classnames';
 
-import { YoutubePlayer } from 'components';
+import { PlayerComponent } from 'components';
 import styles from './main.module.scss';
 
 const TEST_SONG = {
@@ -16,7 +16,7 @@ const TEST_SONG = {
 const Main = () => {
   return (
     <div className={cx(styles.mainWrapper, 'innerContainer')}>
-      <YoutubePlayer id={TEST_SONG.id} loop />
+      <PlayerComponent song={TEST_SONG} loop />
       이곳에선 가장 최근에 올라온 노래를 들려줘요.
     </div>
   );
