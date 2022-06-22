@@ -4,6 +4,7 @@
 .tag {
   @include flexbox.flexbox(center, center);
   padding: 4px 12px;
+  font-family: 'Nanum Myeongjo', serif;
   color: colors.$DARK;
   background-color: colors.$MIDDLE50;
   border-radius: 10px;
