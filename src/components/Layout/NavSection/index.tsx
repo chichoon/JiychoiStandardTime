@@ -10,9 +10,9 @@ const NavSection = () => {
     <nav className={styles.layoutNavBar}>
       <ul>
         {NAVLINK_DATA.map((item) => (
-          <li key={`nav-link-${item}`}>
+          <li key={`nav-link-${item}`} className={styles.layoutNavElement}>
             <NavLink to={item} className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
-              <div className={styles.navigationBarItem}>{item}</div>
+              {item}
             </NavLink>
           </li>
         ))}
