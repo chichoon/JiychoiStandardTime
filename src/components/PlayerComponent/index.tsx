@@ -20,7 +20,7 @@ const PlayerComponent = ({ song, onEnded, loop }: IProps) => {
         loop={loop}
         onEnded={onEnded}
         width='100%'
-        height='50%'
+        height='40%'
       />
       <div className={styles.playerInformation}>
         <p className={styles.playerDate}>{`#${song.index} ${dayjs(song.date).format('YYYY년 MM월 DD일')}`}</p>
