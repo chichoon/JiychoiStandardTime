@@ -10,7 +10,7 @@ const Layout = () => {
         <img src='/main-image.gif' alt='main-profile' />
         <div className={styles.layoutContainer}>
           <h1 className={styles.layoutHeader}>#지최표준시</h1>
-          <h3 className={styles.layoutSubHeader}>jiychoi standard time</h3>
+          <p className={styles.layoutSubHeader}>jiychoi standard time</p>
           <NavSection />
           <Outlet />
         </div>
