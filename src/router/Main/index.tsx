@@ -15,7 +15,7 @@ const TEST_SONG = {
 
 const Main = () => {
   return (
-    <div className={cx(styles.mainWrapper, 'innerContainer')}>
+    <div className={cx('innerContainer')}>
       <PlayerComponent song={TEST_SONG} loop />
     </div>
   );
