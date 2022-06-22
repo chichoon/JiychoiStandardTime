@@ -1,14 +1,36 @@
 @use 'styles/constants/colors';
+@use 'styles/constants/levels';
+@use 'styles/constants/sizes';
 @use 'styles/mixins/flexbox';
 
 .layoutBackground {
+  @include flexbox.flexbox(center, center);
   width: 100vw;
   height: 100vh;
   background: linear-gradient(colors.$THEME_SUNRISE_1, colors.$THEME_SUNRISE_2 25%, colors.$THEME_SUNRISE_3);
 }
 
 .layoutWrapper {
+  @include flexbox.flexbox(center, center);
+  flex-direction: column;
+  width: 90%;
+  max-width: 720px;
+  height: 90%;
+
+  & > img {
+    width: sizes.$LAYOUT_IMAGE_SIZE;
+    height: sizes.$LAYOUT_IMAGE_SIZE;
+    object-fit: cover;
+  }
+}
+
+.layoutContainer {
   width: 100%;
-  height: 100%;
-  padding: 16px;
+  height: calc(100% - sizes.$LAYOUT_IMAGE_SIZE / 2);
+  background-color: colors.$WHITE;
+
+  .layoutHeader {
+    font-family: Raleway, sans-serif;
+    font-size: sizes.$FONT_TITLE;
+  }
 }
