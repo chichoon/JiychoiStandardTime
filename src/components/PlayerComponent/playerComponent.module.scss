@@ -1,0 +1,44 @@
+@use 'styles/constants/colors';
+@use 'styles/constants/levels';
+@use 'styles/constants/sizes';
+@use 'styles/mixins/flexbox';
+
+.playerComponentWrapper {
+  font-family: 'Nanum Myeongjo', serif;
+  color: colors.$DARK;
+}
+
+.playerInformation {
+  padding: 0 8px;
+
+  .playerDate {
+    margin: 16px 0 8px;
+    font-size: sizes.$FONT_SMALL;
+    font-style: italic;
+    color: colors.$DARK50;
+  }
+
+  .playerSongInfo {
+    @include flexbox.flexbox(start, center);
+    flex-direction: row;
+    margin-bottom: 16px;
+
+    dt {
+      margin-right: 16px;
+      font-size: sizes.$FONT_SUBTITLE;
+      font-weight: 700;
+    }
+
+    dd {
+      color: colors.$DARK50;
+    }
+  }
+
+  .playerComment {
+    max-height: 192px;
+    padding: 16px;
+    overflow: auto;
+    border: 1px solid colors.$DARK30;
+    border-radius: 4px;
+  }
+}
