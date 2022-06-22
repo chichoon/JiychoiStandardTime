@@ -1,14 +1,21 @@
-import Youtube, { YouTubeEvent } from 'react-youtube';
-
-import styles from './youtubePlayer.module.scss';
+import ReactPlayer from 'react-player/lazy';
 
 interface IProps {
   id: string;
-  onEnd: ((event: YouTubeEvent<number>) => void) | undefined;
+  onEnded?: () => void;
+  loop: boolean;
 }
 
-const YoutubePlayer = ({ id, onEnd }: IProps) => {
-  return <Youtube videoId={id} id='youtube-player' className={styles.youtubePlayerWrapper} onEnd={onEnd} />;
+const YoutubePlayer = ({ id, onEnded, loop }: IProps) => {
+  return (
+    <ReactPlayer
+      url={`https://www.youtube.com/watch?v=${id}`}
+      loop={loop}
+      onEnded={onEnded}
+      width='100%'
+      height='50%'
+    />
+  );
 };
 
 export default YoutubePlayer;

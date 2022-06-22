@@ -37,12 +37,12 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-error-boundary": "^3.1.4",
+    "react-player": "^2.10.1",
     "react-query": "^3.39.1",
     "react-redux": "^8.0.2",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "react-use": "^17.4.0",
-    "react-youtube": "^9.0.2",
     "sass": "^1.52.3",
     "store": "^2.0.12",
     "web-vitals": "^2.1.0"
