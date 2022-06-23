@@ -35,6 +35,7 @@
       overflow: hidden;
       font-size: sizes.$FONT_SUBTITLE;
       font-weight: 700;
+      line-height: sizes.$FONT_SUBTITLE;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
@@ -42,6 +43,7 @@
     dd {
       max-width: 40%;
       overflow: hidden;
+      line-height: sizes.$FONT_SUBTITLE;
       color: colors.$DARK50;
       text-overflow: ellipsis;
       white-space: nowrap;
