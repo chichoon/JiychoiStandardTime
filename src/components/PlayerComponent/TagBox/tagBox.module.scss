@@ -2,11 +2,12 @@
 
 .tagBoxWrapper {
   @include flexbox.flexbox(start, center);
-  flex-direction: row;
+  flex-flow: wrap;
   width: 100%;
   overflow: auto;
 
   li {
     margin-right: 8px;
+    margin-bottom: 4px;
   }
 }
