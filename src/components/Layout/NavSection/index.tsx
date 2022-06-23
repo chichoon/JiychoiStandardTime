@@ -14,7 +14,7 @@ const NavSection = () => {
     <nav className={styles.layoutNavBar}>
       <ul>
         {NAVLINK_DATA.map((item) => (
-          <li key={`nav-link-${item}`} className={styles.layoutNavElement}>
+          <li key={`nav-link-${item.link}`} className={styles.layoutNavElement}>
             <NavLink to={item.link} className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
               {item.title}
             </NavLink>
