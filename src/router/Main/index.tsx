@@ -1,13 +1,19 @@
+import { Suspense } from 'react';
+import { ErrorBoundary } from 'react-error-boundary';
 import cx from 'classnames';
 
-import { PlayerComponent } from 'components';
-import { useFetchLatestSong } from 'hooks';
+import { Error, Loading } from 'components';
+import MainInner from './MainInner';
 
 const Main = () => {
-  const todaySong = useFetchLatestSong();
+  const handleErrorFallback = () => <Error message='노래를 불러올 수 없어요' />;
   return (
     <div className={cx('innerContainer')}>
-      <PlayerComponent song={todaySong} loop />
+      <ErrorBoundary FallbackComponent={handleErrorFallback}>
+        <Suspense fallback={<Loading />}>
+          <MainInner />
+        </Suspense>
+      </ErrorBoundary>
     </div>
   );
 };
