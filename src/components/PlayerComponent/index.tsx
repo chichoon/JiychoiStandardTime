@@ -30,7 +30,7 @@ const PlayerComponent = ({ song, onEnded, loop }: IProps) => {
       />
       <div className={styles.playerInformation}>
         <p className={styles.playerDate}>{`#${song.index} ${dayjs(song.date).format('YYYY년 MM월 DD일')}`}</p>
-        <dl className={cx('currentSongInfo')}>
+        <dl className={cx(styles.playerSongInfo, 'currentSongInfo')}>
           <dt ref={titleRef}>{song.title}</dt>
           <dd>{song.artist}</dd>
           <div

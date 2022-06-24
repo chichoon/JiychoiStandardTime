@@ -10,7 +10,7 @@ interface IProps {
 const FilteredSongElement = ({ song }: IProps) => {
   return (
     <li className={styles.filteredSongElement}>
-      <dl className={cx('currentSongInfo')}>
+      <dl className={cx(styles.filteredSongInfo, 'currentSongInfo')}>
         <dt>{song.title}</dt>
         <dd>{song.artist}</dd>
       </dl>

@@ -13,7 +13,6 @@
   position: relative;
   flex-direction: row;
   width: 100%;
-  margin-bottom: 16px;
   font-family: 'Nanum Myeongjo', serif;
 
   dt {
@@ -23,6 +22,7 @@
     font-size: sizes.$FONT_SUBTITLE;
     font-weight: 700;
     line-height: sizes.$FONT_SUBTITLE;
+    color: colors.$DARK;
     text-overflow: ellipsis;
     white-space: nowrap;
   }

@@ -26,7 +26,7 @@
 
 .layoutContainer {
   width: 100%;
-  height: calc(100% - sizes.$LAYOUT_IMAGE_SIZE / 2);
+  height: calc(100% - sizes.$LAYOUT_IMAGE_SIZE);
   padding: sizes.$LAYOUT_PADDING;
   background-color: colors.$WHITE;
   border-radius: sizes.$LAYOUT_BORDER_RADIUS;

@@ -11,7 +11,7 @@
   }
 
   .tagList {
-    @include flexbox.flexbox(start, center);
+    @include flexbox.flexbox(start, start);
     flex-flow: wrap;
     width: 100%;
     height: 12vh;
@@ -24,6 +24,10 @@
 
     li {
       margin: 4px;
+    }
+
+    &:last-child {
+      height: 8vh;
     }
   }
 }
