@@ -9,7 +9,7 @@ const getSongsListFiltered = (tagList: TagType[]) =>
 
     if (!allSongsList) throw new Error();
     if (tagList.length === 0) return allSongsList;
-    return allSongsList.filter(() => allSongsList.some((song) => tagList.every((tag) => song.tagList.includes(tag))));
+    return allSongsList.filter((song) => tagList.every((tag) => song.tagList.includes(tag)));
   });
 
 export default getSongsListFiltered;
