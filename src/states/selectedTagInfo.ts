@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { RootState } from 'states';
-import { TagType, ITagInfo } from 'types/tags.d';
+import { TagType, ITagInfo } from 'types/tags';
 
 const INIT_TAGINFO: ITagInfo = {
   selectableTags: [

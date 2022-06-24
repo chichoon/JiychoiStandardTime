@@ -1,4 +1,4 @@
-import { TagType } from './tags.d';
+import { TagType } from 'types/tags';
 
 export interface ISongsList {
   songs: ISong[];
