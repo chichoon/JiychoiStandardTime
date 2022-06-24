@@ -1,19 +1,13 @@
-import { ISong } from 'types/musics';
 import axios from 'axios';
 
-const INIT_DATA: ISong = {
-  index: 0,
-  title: '',
-  artist: '',
-  comment: '',
-  id: '',
-  date: '',
-  tagList: [],
-};
+import { ISong } from 'types/musics';
 
-const getLatestSong = () =>
+const getLatestSong = (): Promise<ISong> =>
   axios.get('jst-songlist.json').then((response) => {
-    return response.data.songs[0] ?? INIT_DATA;
+    const allSongsList: ISong[] = response.data.songs;
+
+    if (!allSongsList[allSongsList.length - 1]) throw new Error();
+    return allSongsList[allSongsList.length - 1];
   });
 
 export default getLatestSong;
