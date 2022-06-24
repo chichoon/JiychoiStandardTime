@@ -25,6 +25,7 @@
 
   .playerSongInfo {
     @include flexbox.flexbox(start, center);
+    position: relative;
     flex-direction: row;
     width: 100%;
     margin-bottom: 16px;
@@ -60,4 +61,21 @@
     border: 1px solid colors.$DARK30;
     border-radius: 4px;
   }
+}
+
+.tooltip {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  padding: 2px 5px;
+  color: colors.$DARK50;
+  background-color: colors.$WHITE;
+  border: 1px solid colors.$DARK50;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.isShown {
+  opacity: 1;
+  transition: 0.2s;
 }
