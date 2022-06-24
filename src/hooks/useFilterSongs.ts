@@ -7,6 +7,7 @@ const useFilterSongs = () => {
   const selectedTags = useSelector(getSelectedTags);
   const { data } = useQuery(['filteredSong', ...selectedTags], () => getSongsListFiltered(selectedTags), {
     refetchOnWindowFocus: false,
+    useErrorBoundary: true,
     suspense: true,
   });
 
