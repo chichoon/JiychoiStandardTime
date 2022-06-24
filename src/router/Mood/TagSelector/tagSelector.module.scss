@@ -14,7 +14,7 @@
     @include flexbox.flexbox(start, center);
     flex-flow: wrap;
     width: 100%;
-    min-height: 20px;
+    height: 12vh;
     padding: 12px 16px;
     margin-bottom: 16px;
     overflow: auto;

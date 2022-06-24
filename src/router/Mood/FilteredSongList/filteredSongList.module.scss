@@ -1,0 +1,9 @@
+@use 'styles/constants/colors';
+
+.filteredSongListWrapper {
+  height: calc(100% - 24vh - 32px - 48px);
+  min-height: 12vh;
+  overflow-y: auto;
+  border: 1px solid colors.$DARK30;
+  border-radius: 4px;
+}
