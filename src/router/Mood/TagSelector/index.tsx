@@ -17,14 +17,16 @@ const TagSelector = () => {
 
   return (
     <div className={styles.tagSelectorWrapper}>
-      <ul className={styles.selectableTagList}>
+      <p className={styles.tagSelectorLabel}>선택할 수 있는 태그</p>
+      <ul className={styles.tagList}>
         {selectableTags.map((tag) => (
           <li key={`selectable-${tag}`}>
             <Tag tagName={tag} onClick={() => handleTagClick(tag)} />
           </li>
         ))}
       </ul>
-      <ul className={styles.selectedTagList}>
+      <p className={styles.tagSelectorLabel}>선택한 태그</p>
+      <ul className={styles.tagList}>
         {selectedTags.map((tag) => (
           <li key={`selected-${tag}`}>
             <Tag tagName={tag} onClick={() => handleSelectedTagClick(tag)} />
