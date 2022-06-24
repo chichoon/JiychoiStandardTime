@@ -1,3 +1,3 @@
-import getSongsList from './getSongsList';
+import getLatestSong from './getLatestSong';
 
-export { getSongsList };
+export { getLatestSong };
