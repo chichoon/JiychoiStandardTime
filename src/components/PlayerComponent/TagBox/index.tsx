@@ -1,9 +1,10 @@
 import { Tag } from 'components';
+import { TagType } from 'types/tags';
 
 import styles from './tagBox.module.scss';
 
 interface IProps {
-  tagList: string[];
+  tagList: TagType[];
 }
 
 const TagBox = ({ tagList }: IProps) => {

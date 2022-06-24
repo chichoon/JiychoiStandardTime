@@ -1,3 +1,5 @@
+import { TagType } from './tags.d';
+
 export interface ISongsList {
   songs: ISong[];
 }
@@ -10,5 +12,5 @@ export interface ISong {
   id: string;
   date: string;
   recommended?: string;
-  tagList: string[];
+  tagList: TagType[];
 }

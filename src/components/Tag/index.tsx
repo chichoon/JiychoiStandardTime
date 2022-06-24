@@ -1,9 +1,11 @@
 import { MouseEvent } from 'react';
 
+import { TagType } from 'types/tags';
+
 import styles from './tag.module.scss';
 
 interface IProps {
-  tagName: string;
+  tagName: TagType;
   onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 

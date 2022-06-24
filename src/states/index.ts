@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import selectedTags from './selectedTags';
+import selectedTagInfo from './selectedTagInfo';
 
 export const store = configureStore({
   reducer: {
-    selectedTags,
+    selectedTagInfo,
   },
   devTools: process.env.NODE_ENV !== 'production',
   middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false }),
