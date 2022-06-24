@@ -23,34 +23,6 @@
     color: colors.$DARK50;
   }
 
-  .playerSongInfo {
-    @include flexbox.flexbox(start, center);
-    position: relative;
-    flex-direction: row;
-    width: 100%;
-    margin-bottom: 16px;
-
-    dt {
-      max-width: calc(60% - 16px);
-      margin-right: 16px;
-      overflow: hidden;
-      font-size: sizes.$FONT_SUBTITLE;
-      font-weight: 700;
-      line-height: sizes.$FONT_SUBTITLE;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    dd {
-      max-width: 40%;
-      overflow: hidden;
-      line-height: sizes.$FONT_SUBTITLE;
-      color: colors.$DARK50;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-  }
-
   .playerComment {
     max-height: calc(100% - 78px - 23.5px);
     padding: 12px 16px;

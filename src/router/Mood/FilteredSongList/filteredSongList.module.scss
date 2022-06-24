@@ -1,9 +1,41 @@
 @use 'styles/constants/colors';
+@use 'styles/constants/sizes';
+@use 'styles/mixins/flexbox';
 
 .filteredSongListWrapper {
   height: calc(100% - 24vh - 32px - 48px);
   min-height: 12vh;
   overflow-y: auto;
-  border: 1px solid colors.$DARK30;
+  border: 1px solid colors.$DARK50;
   border-radius: 4px;
+}
+
+.filteredSongElement {
+  .currentSongInfo {
+    @include flexbox.flexbox(start, center);
+    position: relative;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 16px;
+
+    dt {
+      max-width: calc(60% - 16px);
+      margin-right: 16px;
+      overflow: hidden;
+      font-size: sizes.$FONT_SUBTITLE;
+      font-weight: 700;
+      line-height: sizes.$FONT_SUBTITLE;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    dd {
+      max-width: 40%;
+      overflow: hidden;
+      line-height: sizes.$FONT_SUBTITLE;
+      color: colors.$DARK50;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
 }

@@ -1,5 +1,38 @@
+@use 'styles/constants/colors';
+@use 'styles/constants/sizes';
+@use 'styles/mixins/flexbox';
+
 .innerContainer {
   width: 100%;
   height: calc(100% - 112px);
   overflow: auto;
+}
+
+.currentSongInfo {
+  @include flexbox.flexbox(start, center);
+  position: relative;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 16px;
+  font-family: 'Nanum Myeongjo', serif;
+
+  dt {
+    max-width: calc(60% - 16px);
+    margin-right: 16px;
+    overflow: hidden;
+    font-size: sizes.$FONT_SUBTITLE;
+    font-weight: 700;
+    line-height: sizes.$FONT_SUBTITLE;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  dd {
+    max-width: 40%;
+    overflow: hidden;
+    line-height: sizes.$FONT_SUBTITLE;
+    color: colors.$DARK50;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
