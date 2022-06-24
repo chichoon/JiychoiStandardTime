@@ -48,4 +48,4 @@ export default selectedTagInfoSlice.reducer;
 
 export const getSelectableTags = (state: RootState): TagType[] => state.selectedTagInfo.selectableTags;
 
-export const getSelectedTags = (state: RootState): TagType[] => state.selectedTagInfo.selectableTags;
+export const getSelectedTags = (state: RootState): TagType[] => state.selectedTagInfo.selectedTags;
