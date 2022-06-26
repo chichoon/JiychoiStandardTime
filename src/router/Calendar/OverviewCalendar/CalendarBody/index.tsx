@@ -3,10 +3,10 @@ import { Dayjs } from 'dayjs';
 import { getMonthArray } from 'utils/calendarUtils';
 
 import styles from './calendarBody.module.scss';
-import { ISong, ISongByDay } from 'types/musics';
+import { ISong, ISongsByDay } from 'types/musics';
 import CalendarDateElement from './CalendarDateElement';
 
-const TEST_DATA: ISongByDay = {
+const TEST_DATA: ISongsByDay = {
   '2022-05-29': {
     index: 0,
     title: '맞은편 미래',

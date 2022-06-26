@@ -15,6 +15,6 @@ export interface ISong {
   tagList: TagType[];
 }
 
-export interface ISongByDay {
+export interface ISongsByDay {
   [key: string]: ISong;
 }
