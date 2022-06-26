@@ -14,3 +14,7 @@ export interface ISong {
   recommended?: string;
   tagList: TagType[];
 }
+
+export interface ISongByDay {
+  [key: string]: ISong;
+}
