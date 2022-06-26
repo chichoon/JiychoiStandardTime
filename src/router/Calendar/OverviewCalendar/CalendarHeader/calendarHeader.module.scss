@@ -1,0 +1,20 @@
+@use 'styles/mixins/flexbox';
+@use 'styles/constants/colors';
+@use 'styles/constants/sizes';
+
+.calendarHeaderWrapper {
+  @include flexbox.flexbox(between, center);
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 32px;
+
+  button {
+    font-size: sizes.$FONT_SUBTITLE;
+    color: colors.$DARK;
+  }
+
+  .calendarHeaderTitleButton {
+    width: 150px;
+    min-width: 120px;
+  }
+}

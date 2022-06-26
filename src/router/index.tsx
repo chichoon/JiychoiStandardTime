@@ -4,6 +4,7 @@ import { Layout } from 'components';
 import Main from './Main';
 import Mood from './Mood';
 import Play from './Play';
+import Calendar from './Calendar';
 
 const Router = () => {
   return (
@@ -11,7 +12,7 @@ const Router = () => {
       <Route path='/' element={<Layout />}>
         <Route path='/' element={<Navigate replace to='main' />} />
         <Route path='main' element={<Main />} />
-        <Route path='calendar' element={<Main />} />
+        <Route path='calendar' element={<Calendar />} />
         <Route path='mood' element={<Mood />} />
         <Route path='play/:index' element={<Play />} />
       </Route>
