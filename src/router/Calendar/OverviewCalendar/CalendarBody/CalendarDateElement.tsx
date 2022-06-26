@@ -21,19 +21,21 @@ const CalendarDateElement = ({ date, songOfTheDay, ifOtherMonth }: IProps) => {
   const tooltipString = songOfTheDay ? `${songOfTheDay.date}\n${songOfTheDay.title}` : '';
 
   return (
-    <li className={styles.calendarButtonWrapper} ref={buttonRef}>
+    <li className={styles.calendarButtonWrapper}>
       {songOfTheDay ? (
-        <Link
-          to={`/play/${songOfTheDay.index}`}
-          className={cx(styles.dateWrapper, { [styles.otherMonthDate]: ifOtherMonth })}
-        >
-          {date.date()}
-          <div className={styles.songAvailable} />
-        </Link>
+        <>
+          <Link
+            to={`/play/${songOfTheDay.index}`}
+            className={cx(styles.dateWrapper, styles.songAvailable, { [styles.otherMonthDate]: ifOtherMonth })}
+            ref={buttonRef}
+          >
+            {date.date()}
+          </Link>
+          <Tooltip tooltipString={tooltipString} position='topMiddle' isShown={isHovering} />
+        </>
       ) : (
         <div className={cx(styles.dateWrapper, { [styles.otherMonthDate]: ifOtherMonth })}>{date.date()}</div>
       )}
-      {songOfTheDay && <Tooltip tooltipString={tooltipString} position='topMiddle' isShown={isHovering} />}
     </li>
   );
 };
