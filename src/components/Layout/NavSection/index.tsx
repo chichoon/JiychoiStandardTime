@@ -1,4 +1,5 @@
-import { NavLink } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import cx from 'classnames';
 
 import styles from './navSection.module.scss';
@@ -10,8 +11,21 @@ const NAVLINK_DATA = [
 ];
 
 const NavSection = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [isPlayPage, setIsPlayPage] = useState(false);
+
+  useEffect(() => setIsPlayPage(location.pathname.startsWith('/play')), [location]);
+
+  const handleButtonClick = () => navigate(-1);
+
   return (
-    <nav className={styles.layoutNavBar}>
+    <nav className={cx(styles.layoutNavBar, { [styles.isPlayPage]: isPlayPage })}>
+      {isPlayPage && (
+        <button type='button' onClick={handleButtonClick} className={styles.goBackButton}>
+          {'< 뒤로가기'}
+        </button>
+      )}
       <ul>
         {NAVLINK_DATA.map((item) => (
           <li key={`nav-link-${item.link}`} className={styles.layoutNavElement}>
