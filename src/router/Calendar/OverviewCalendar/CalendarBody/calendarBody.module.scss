@@ -9,6 +9,12 @@
   height: 100%;
 }
 
+.calendarButtonWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 .dateWrapper {
   @include flexbox.flexbox(start, start);
   width: 100%;

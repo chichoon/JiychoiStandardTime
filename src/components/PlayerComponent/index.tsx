@@ -8,6 +8,7 @@ import { ISong } from 'types/musics';
 
 import styles from './playerComponent.module.scss';
 import TagBox from './TagBox';
+import Tooltip from 'components/Tooltip';
 
 interface IProps {
   song: ISong;
@@ -30,13 +31,11 @@ const PlayerComponent = ({ song, onEnded, loop }: IProps) => {
       />
       <div className={styles.playerInformation}>
         <p className={styles.playerDate}>{`#${song.index} ${dayjs(song.date).format('YYYY년 MM월 DD일')}`}</p>
-        <dl className={cx(styles.playerSongInfo, 'currentSongInfo')}>
-          <dt ref={titleRef}>{song.title}</dt>
+        <div ref={titleRef} className={cx(styles.playerSongInfo, 'currentSongInfo')}>
+          <dt>{song.title}</dt>
           <dd>{song.artist}</dd>
-          <div
-            className={cx(styles.tooltip, { [styles.isShown]: isHovering })}
-          >{`${song.title} - ${song.artist} `}</div>
-        </dl>
+          <Tooltip tooltipString={`${song.title} - ${song.artist} `} position='bottomLeft' isShown={isHovering} />
+        </div>
         <p className={styles.playerComment}>{song.comment}</p>
         <TagBox tagList={song.tagList} />
       </div>
