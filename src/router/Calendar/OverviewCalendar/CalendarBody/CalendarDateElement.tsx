@@ -7,6 +7,7 @@ import { ISong } from 'types/musics';
 
 import styles from './calendarBody.module.scss';
 import { Tooltip } from 'components';
+import { Link } from 'react-router-dom';
 
 interface IProps {
   date: Dayjs;
@@ -14,26 +15,21 @@ interface IProps {
   ifOtherMonth?: boolean;
 }
 
-const CalendarDateButton = ({ date, songOfTheDay, ifOtherMonth }: IProps) => {
+const CalendarDateElement = ({ date, songOfTheDay, ifOtherMonth }: IProps) => {
   const buttonRef = useRef(null);
   const isHovering = useHoverDirty(buttonRef);
   const tooltipString = songOfTheDay ? `${songOfTheDay.date}\n${songOfTheDay.title}` : '';
 
-  const handleButtonClick = () => {
-    console.log(songOfTheDay?.title);
-  };
-
   return (
     <li className={styles.calendarButtonWrapper} ref={buttonRef}>
       {songOfTheDay ? (
-        <button
-          type='button'
-          onClick={handleButtonClick}
+        <Link
+          to={`/play/${songOfTheDay.index}`}
           className={cx(styles.dateWrapper, { [styles.otherMonthDate]: ifOtherMonth })}
         >
           {date.date()}
           <div className={styles.songAvailable} />
-        </button>
+        </Link>
       ) : (
         <div className={cx(styles.dateWrapper, { [styles.otherMonthDate]: ifOtherMonth })}>{date.date()}</div>
       )}
@@ -42,4 +38,4 @@ const CalendarDateButton = ({ date, songOfTheDay, ifOtherMonth }: IProps) => {
   );
 };
 
-export default CalendarDateButton;
+export default CalendarDateElement;

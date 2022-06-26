@@ -4,7 +4,7 @@ import { getMonthArray } from 'utils/calendarUtils';
 
 import styles from './calendarBody.module.scss';
 import { ISong, ISongByDay } from 'types/musics';
-import CalendarDateButton from './CalendarDateButton';
+import CalendarDateElement from './CalendarDateElement';
 
 const TEST_DATA: ISongByDay = {
   '2022-05-29': {
@@ -32,13 +32,13 @@ const CalendarBody = ({ date }: IProps) => {
   return (
     <ul className={styles.calendarBodyWrapper} style={{ gridTemplateRows: `repeat(${monthArray.numOfDate / 7}, 1fr)` }}>
       {monthArray.lastMonthArr.map((v) => (
-        <CalendarDateButton key={`calendar-${v}`} date={v} songOfTheDay={getSongOfDay(v)} ifOtherMonth />
+        <CalendarDateElement key={`calendar-${v}`} date={v} songOfTheDay={getSongOfDay(v)} ifOtherMonth />
       ))}
       {monthArray.thisMonthArr.map((v) => (
-        <CalendarDateButton key={`calendar-${v}`} date={v} songOfTheDay={getSongOfDay(v)} />
+        <CalendarDateElement key={`calendar-${v}`} date={v} songOfTheDay={getSongOfDay(v)} />
       ))}
       {monthArray.nextMonthArr.map((v) => (
-        <CalendarDateButton key={`calendar-${v}`} date={v} songOfTheDay={getSongOfDay(v)} ifOtherMonth />
+        <CalendarDateElement key={`calendar-${v}`} date={v} songOfTheDay={getSongOfDay(v)} ifOtherMonth />
       ))}
     </ul>
   );
