@@ -38,6 +38,7 @@
     font-size: sizes.$FONT_TITLE;
     color: colors.$DARK;
     text-align: center;
+    user-select: none;
   }
 
   .layoutSubHeader {
@@ -45,5 +46,6 @@
     color: colors.$DARK50;
     text-align: center;
     letter-spacing: 0.5px;
+    user-select: none;
   }
 }
