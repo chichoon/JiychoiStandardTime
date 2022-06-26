@@ -1,4 +1,5 @@
 @use 'styles/constants/colors';
+@use 'styles/constants/sizes';
 @use 'styles/mixins/flexbox';
 
 .calendarBodyWrapper {
@@ -6,12 +7,36 @@
   grid-template-columns: repeat(7, 1fr);
   width: 100%;
   height: 100%;
+}
 
-  .otherMonthDate {
-    color: colors.$DARK30;
+.dateWrapper {
+  @include flexbox.flexbox(start, start);
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  font-size: sizes.$FONT_NORMAL;
+  line-height: sizes.$FONT_NORMAL;
+  color: colors.$DARK;
+  user-select: none;
+  transition: background-color 0.2s;
+
+  .songAvailable {
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+    background-color: colors.$MIDDLE;
+    border-radius: 8px;
   }
 
-  .thisMonthDate {
-    color: colors.$DARK;
+  &.otherMonthDate {
+    color: colors.$DARK30;
+
+    .songAvailable {
+      background-color: colors.$MIDDLE50;
+    }
+  }
+
+  &:hover {
+    background-color: colors.$DARK10;
   }
 }

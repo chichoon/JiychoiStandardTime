@@ -1,6 +1,16 @@
+@use 'styles/constants/colors';
+
 .selectMonthWrapper {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(4, 1fr);
   height: 100%;
+}
+
+.selectMonthButton {
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: colors.$DARK10;
+  }
 }
