@@ -1,0 +1,61 @@
+@use 'styles/constants/colors';
+@use 'styles/constants/levels';
+
+.tooltipWrapper {
+  position: absolute;
+  z-index: levels.$TOOLTIP;
+  display: none;
+  width: 50vw;
+  filter: drop-shadow(0 0 1px colors.$DARK50);
+
+  .tooltipContainer {
+    padding: 5px 8px;
+    color: colors.$DARK50;
+    white-space: pre-wrap;
+    background-color: colors.$WHITE;
+    border-radius: 5px;
+  }
+
+  .triangle {
+    width: 10px;
+    height: 10px;
+    margin-left: 3px;
+    fill: colors.$WHITE;
+  }
+}
+
+.isShown {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  &.topMiddle {
+    bottom: 100%;
+    left: calc(-100px + 50%);
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 200px;
+
+    .tooltipContainer {
+      max-width: 100%;
+      overflow: hidden;
+      text-align: center;
+      text-overflow: ellipsis;
+    }
+
+    .triangle {
+      margin-top: -2px;
+      transform: scaleY(-1);
+    }
+  }
+
+  &.bottomLeft {
+    top: 25px;
+
+    .triangle {
+      margin-top: 0;
+      margin-bottom: -2px;
+    }
+  }
+}
