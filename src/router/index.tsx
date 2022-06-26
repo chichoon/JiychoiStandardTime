@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { Layout } from 'components';
 import Main from './Main';
 import Mood from './Mood';
+import Play from './Play';
 
 const Router = () => {
   return (
@@ -12,6 +13,7 @@ const Router = () => {
         <Route path='main' element={<Main />} />
         <Route path='calendar' element={<Main />} />
         <Route path='mood' element={<Mood />} />
+        <Route path='play/:index' element={<Play />} />
       </Route>
     </Routes>
   );
