@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useQuery } from 'react-query';
 import { getSongsListFiltered } from 'services';
 
-const useFilterSongs = () => {
+const useFetchFilteredSongs = () => {
   const selectedTags = useSelector(getSelectedTags);
   const { data } = useQuery(['filteredSong', ...selectedTags], () => getSongsListFiltered(selectedTags), {
     refetchOnWindowFocus: false,
@@ -14,4 +14,4 @@ const useFilterSongs = () => {
   return data;
 };
 
-export default useFilterSongs;
+export default useFetchFilteredSongs;

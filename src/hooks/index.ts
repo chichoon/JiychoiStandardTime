@@ -1,4 +1,5 @@
 import useFetchLatestSong from './useFetchLatestSong';
-import useFilterSongs from './useFilterSongs';
+import useFetchFilteredSongs from './useFetchFilteredSongs';
+import useFetchSongByIndex from './useFetchSongByIndex';
 
-export { useFetchLatestSong, useFilterSongs };
+export { useFetchLatestSong, useFetchFilteredSongs, useFetchSongByIndex };

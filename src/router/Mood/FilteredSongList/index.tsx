@@ -1,10 +1,10 @@
-import { useFilterSongs } from 'hooks';
+import { useFetchFilteredSongs } from 'hooks';
 import FilteredSongElement from './FilteredSongElement';
 
 import styles from './filteredSongList.module.scss';
 
 const FilteredSongList = () => {
-  const songList = useFilterSongs();
+  const songList = useFetchFilteredSongs();
   return (
     <ul className={styles.filteredSongListWrapper}>
       {songList?.map((song) => (
