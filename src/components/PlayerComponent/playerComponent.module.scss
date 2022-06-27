@@ -38,3 +38,19 @@
     margin-bottom: 16px;
   }
 }
+
+.recommended {
+  @include flexbox.flexbox(end, center);
+  width: 100%;
+  margin: 10px 0;
+  color: colors.$DARK30;
+  user-select: none;
+
+  .recommendedName {
+    color: colors.$DARK50;
+  }
+
+  .recommendedStr {
+    font-size: sizes.$FONT_SMALL;
+  }
+}

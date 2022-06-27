@@ -38,6 +38,12 @@ const PlayerComponent = ({ song, onEnded, loop }: IProps) => {
         </div>
         <p className={styles.playerComment}>{song.comment}</p>
         <TagBox tagList={song.tagList} />
+        {song.recommended && (
+          <div className={styles.recommended}>
+            <span className={styles.recommendedName}>{song.recommended}</span>
+            <span className={styles.recommendedStr}>님의 추천곡입니다 😉</span>
+          </div>
+        )}
       </div>
     </div>
   );
