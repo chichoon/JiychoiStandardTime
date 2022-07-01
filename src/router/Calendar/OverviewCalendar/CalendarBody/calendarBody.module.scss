@@ -40,6 +40,10 @@
 
     &.songAvailable {
       background-color: colors.$MIDDLE10;
+
+      &:hover {
+        background-color: colors.$MIDDLE30;
+      }
     }
   }
 
