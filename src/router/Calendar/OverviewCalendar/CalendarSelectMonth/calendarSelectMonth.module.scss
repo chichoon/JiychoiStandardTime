@@ -13,4 +13,8 @@
   &:hover {
     background-color: colors.$DARK10;
   }
+
+  &.isSelectedMonth {
+    border: 4px solid colors.$MIDDLE50;
+  }
 }

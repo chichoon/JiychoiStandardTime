@@ -16,7 +16,7 @@ const OverviewCalendar = () => {
       <CalendarHeader date={date} setDate={setDate} setIsSelectMonthOpen={setIsSelectMonthOpen} />
       <div className={styles.calendarBottom}>
         {isSelectMonthOpen ? (
-          <CalendarSelectMonth setDate={setDate} setIsSelectMonthOpen={setIsSelectMonthOpen} />
+          <CalendarSelectMonth date={date} setDate={setDate} setIsSelectMonthOpen={setIsSelectMonthOpen} />
         ) : (
           <CalendarBody date={date} />
         )}
