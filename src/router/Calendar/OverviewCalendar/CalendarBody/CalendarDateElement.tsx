@@ -1,19 +1,21 @@
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { useHoverDirty } from 'react-use';
-import { Dayjs } from 'dayjs';
+import dayjs, { Dayjs } from 'dayjs';
 import cx from 'classnames';
 
 import { ISong } from 'types/musics';
+import { Tooltip } from 'components';
 
 import styles from './calendarBody.module.scss';
-import { Tooltip } from 'components';
-import { Link } from 'react-router-dom';
 
 interface IProps {
   date: Dayjs;
   songOfTheDay?: ISong;
   ifOtherMonth?: boolean;
 }
+
+const today = dayjs();
 
 const CalendarDateElement = ({ date, songOfTheDay, ifOtherMonth }: IProps) => {
   const buttonRef = useRef(null);
@@ -30,11 +32,15 @@ const CalendarDateElement = ({ date, songOfTheDay, ifOtherMonth }: IProps) => {
             ref={buttonRef}
           >
             {date.date()}
+            {today.isSame(date) && <div className={styles.today}>오늘</div>}
           </Link>
           <Tooltip tooltipString={tooltipString} position='topMiddle' isShown={isHovering} />
         </>
       ) : (
-        <div className={cx(styles.dateWrapper, { [styles.otherMonthDate]: ifOtherMonth })}>{date.date()}</div>
+        <div className={cx(styles.dateWrapper, { [styles.otherMonthDate]: ifOtherMonth })}>
+          {date.date()}
+          {today.isSame(date, 'day') && <div className={styles.today}>오늘</div>}
+        </div>
       )}
     </li>
   );
