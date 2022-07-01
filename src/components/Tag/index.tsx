@@ -12,7 +12,7 @@ interface IProps {
 const Tag = ({ tagName, onClick }: IProps) => {
   const korTagName = {
     excited: '신나요',
-    sad: '조금 슬퍼요',
+    sad: '아련해요',
     loud: '음량이 커요',
     peaceful: '차분해요',
     coding: '코딩중',
