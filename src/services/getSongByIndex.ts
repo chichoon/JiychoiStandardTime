@@ -1,5 +1,5 @@
-import { ISong } from 'types/musics';
 import getAllSongs from './getAllSongs';
+import { ISong } from 'types/musics';
 
 const getSongByIndex = (index: number): Promise<ISong> =>
   getAllSongs().then((allSongsList) => {

@@ -1,7 +1,7 @@
-import { ISongsList } from '../types/musics.d';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { RootState } from 'states';
+import { ISongsList } from 'types/musics.d';
 
 const allSongsListSlice = createSlice({
   name: 'allSongsList',

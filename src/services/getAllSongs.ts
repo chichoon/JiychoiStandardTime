@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 import { ISong } from 'types/musics';
 
 const getAllSongs = (): Promise<ISong[]> =>

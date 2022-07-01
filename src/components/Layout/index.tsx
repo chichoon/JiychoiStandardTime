@@ -1,7 +1,8 @@
 import { Outlet } from 'react-router-dom';
 
-import styles from './layout.module.scss';
 import NavSection from './NavSection';
+
+import styles from './layout.module.scss';
 
 const Layout = () => {
   return (

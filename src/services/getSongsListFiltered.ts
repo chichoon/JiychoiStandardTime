@@ -1,5 +1,5 @@
-import { TagType } from 'types/tags';
 import getAllSongs from './getAllSongs';
+import { TagType } from 'types/tags';
 
 const getSongsListFiltered = (tagList: TagType[]) =>
   getAllSongs().then((allSongsList) => {

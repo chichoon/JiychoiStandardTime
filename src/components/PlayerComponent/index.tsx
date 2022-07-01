@@ -4,11 +4,11 @@ import ReactPlayer from 'react-player/lazy';
 import dayjs from 'dayjs';
 import cx from 'classnames';
 
+import Tooltip from 'components/Tooltip';
 import { ISong } from 'types/musics';
+import TagBox from './TagBox';
 
 import styles from './playerComponent.module.scss';
-import TagBox from './TagBox';
-import Tooltip from 'components/Tooltip';
 
 interface IProps {
   song: ISong;

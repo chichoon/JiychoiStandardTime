@@ -1,6 +1,7 @@
-import { INIT_DATA } from 'utils/latestSongUtils';
 import { useQuery } from 'react-query';
+
 import { getLatestSong } from 'services';
+import { INIT_DATA } from 'utils/latestSongUtils';
 
 const useFetchLatestSong = () => {
   const { data = INIT_DATA } = useQuery(['latestSong'], getLatestSong, {

@@ -1,7 +1,7 @@
 import { useQuery } from 'react-query';
 
-import { ISongsByDay } from 'types/musics';
 import { getAllSongsByDay } from 'services';
+import { ISongsByDay } from 'types/musics';
 
 const INIT_DATA: ISongsByDay = {};
 

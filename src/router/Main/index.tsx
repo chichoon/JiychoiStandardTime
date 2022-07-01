@@ -2,8 +2,8 @@ import { Suspense } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import cx from 'classnames';
 
-import { useFetchLatestSong } from 'hooks';
 import { Error, Loading, PlayerComponent } from 'components';
+import { useFetchLatestSong } from 'hooks';
 
 const MainInner = () => {
   const todaySong = useFetchLatestSong();

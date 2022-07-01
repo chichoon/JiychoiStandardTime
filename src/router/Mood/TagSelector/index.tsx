@@ -1,6 +1,6 @@
-import { Tag } from 'components';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { Tag } from 'components';
 import { deselectTag, getSelectableTags, getSelectedTags, selectTag } from 'states/selectedTagInfo';
 import { TagType } from 'types/tags';
 

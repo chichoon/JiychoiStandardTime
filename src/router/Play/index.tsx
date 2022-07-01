@@ -3,8 +3,8 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { useParams } from 'react-router-dom';
 import cx from 'classnames';
 
-import { useFetchSongByIndex } from 'hooks';
 import { Error, Loading, PlayerComponent } from 'components';
+import { useFetchSongByIndex } from 'hooks';
 
 interface IProps {
   index: number;

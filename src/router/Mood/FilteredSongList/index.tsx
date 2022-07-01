@@ -1,5 +1,5 @@
-import { useFetchFilteredSongs } from 'hooks';
 import FilteredSongElement from './FilteredSongElement';
+import { useFetchFilteredSongs } from 'hooks';
 
 import styles from './filteredSongList.module.scss';
 

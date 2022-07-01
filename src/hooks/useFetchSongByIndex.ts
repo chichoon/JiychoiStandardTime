@@ -1,6 +1,7 @@
-import { INIT_DATA } from 'utils/latestSongUtils';
 import { useQuery } from 'react-query';
+
 import { getSongByIndex } from 'services';
+import { INIT_DATA } from 'utils/latestSongUtils';
 
 const useFetchSongByIndex = (index: number) => {
   const { data = INIT_DATA } = useQuery(['indexSong', index], () => getSongByIndex(index), {
