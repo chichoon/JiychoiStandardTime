@@ -5,6 +5,7 @@ export interface ITagInfo {
 
 export type TagType =
   | 'excited'
+  | 'sad'
   | 'loud'
   | 'peaceful'
   | 'coding'
@@ -17,6 +18,7 @@ export type TagType =
   | 'live'
   | 'band'
   | 'orchestra'
+  | 'classic'
   | 'guitar'
   | 'piano'
   | 'bass'

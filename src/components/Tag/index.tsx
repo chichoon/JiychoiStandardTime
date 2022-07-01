@@ -12,7 +12,8 @@ interface IProps {
 const Tag = ({ tagName, onClick }: IProps) => {
   const korTagName = {
     excited: '신나요',
-    loud: '시끄러워요',
+    sad: '조금 슬퍼요',
+    loud: '음량이 커요',
     peaceful: '차분해요',
     coding: '코딩중',
     fast: '속도감 있어요',
@@ -26,6 +27,7 @@ const Tag = ({ tagName, onClick }: IProps) => {
     orchestra: '오케스트라 사운드',
     guitar: '훌륭한 기타',
     piano: '경쾌한 피아노',
+    classic: '클래식 또는 재즈',
     bass: '끝내주는 베이스',
     inst: '보컬이 없어요',
   }[tagName];
