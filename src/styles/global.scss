@@ -2,44 +2,6 @@
 @use 'styles/constants/sizes';
 @use 'styles/mixins/flexbox';
 
-// opacity 10%: 0xE6
-// opacity 30%: 0xB3
-// opacity 50%: 0x82
-
-:root[color-theme='theme-sunrise'],
-:root[color-theme='theme-daylight'] {
-  --container-background-color: #ffffff;
-
-  --color-light: #fff9e0;
-  --color-light30: #fff9e0b3;
-  --color-light50: #fff9e082;
-  --color-middle: #f6b94f;
-  --color-middle10: #f6b94fe6;
-  --color-middle30: #f6b94fb3;
-  --color-middle50: #f6b94f82;
-  --color-dark: #402b23;
-  --color-dark10: #402b23e6;
-  --color-dark30: #402b2366;
-  --color-dark50: #402b2382;
-}
-
-:root[color-theme='theme-night'],
-:root[color-theme='theme-sunset'] {
-  --container-background-color: #393a3d;
-
-  --color-light: #5b5a69;
-  --color-light30: #5b5a69b3;
-  --color-light50: #5b5a6982;
-  --color-middle: #7f7e91;
-  --color-middle10: #7f7e91e6;
-  --color-middle30: #7f7e91b3;
-  --color-middle50: #7f7e9182;
-  --color-dark: #a7a5b7;
-  --color-dark10: #a7a5b7e6;
-  --color-dark30: #a7a5b7b3;
-  --color-dark50: #a7a5b782;
-}
-
 .innerContainer {
   width: 100%;
   height: calc(100% - 112px);

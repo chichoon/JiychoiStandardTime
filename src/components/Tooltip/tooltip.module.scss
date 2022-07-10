@@ -9,10 +9,10 @@
   filter: drop-shadow(0 0 1px var(--color-dark50));
 
   .tooltipContainer {
-    padding: 5px 8px;
+    padding: 8px;
     color: var(--color-dark50);
     white-space: pre-wrap;
-    background-color: colors.$WHITE;
+    background-color: var(--container-background-color);
     border-radius: 5px;
   }
 
@@ -20,7 +20,7 @@
     width: 10px;
     height: 10px;
     margin-left: 3px;
-    fill: colors.$WHITE;
+    fill: var(--container-background-color);
   }
 }
 
