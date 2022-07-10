@@ -42,22 +42,22 @@
   width: 100%;
   height: calc(100% - sizes.$LAYOUT_IMAGE_SIZE);
   padding: sizes.$LAYOUT_PADDING;
-  background-color: colors.$WHITE;
+  background-color: var(--container-background-color);
   border-radius: sizes.$LAYOUT_BORDER_RADIUS;
-  box-shadow: 0 0 16px 4px colors.$LIGHT30;
+  box-shadow: 0 0 16px 4px var(--color-light30);
 
   .layoutHeader {
     margin-bottom: 4px;
     font-family: 'Gowun Batang', serif;
     font-size: sizes.$FONT_TITLE;
-    color: colors.$DARK;
+    color: var(--color-dark);
     text-align: center;
     user-select: none;
   }
 
   .layoutSubHeader {
     font-family: Raleway, sans-serif;
-    color: colors.$DARK50;
+    color: var(--color-dark50);
     text-align: center;
     letter-spacing: 0.5px;
     user-select: none;

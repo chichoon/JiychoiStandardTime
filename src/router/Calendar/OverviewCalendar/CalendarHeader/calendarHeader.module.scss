@@ -1,5 +1,4 @@
 @use 'styles/mixins/flexbox';
-@use 'styles/constants/colors';
 @use 'styles/constants/sizes';
 
 .calendarHeaderWrapper {
@@ -10,7 +9,7 @@
 
   button {
     font-size: sizes.$FONT_SUBTITLE;
-    color: colors.$DARK;
+    color: var(--color-dark);
   }
 
   .calendarHeaderButton {

@@ -1,12 +1,11 @@
-@use 'styles/constants/colors';
 @use 'styles/mixins/flexbox';
 
 .tag {
   @include flexbox.flexbox(center, center);
   padding: 4px 12px;
   font-family: 'Nanum Myeongjo', serif;
-  color: colors.$DARK;
+  color: var(--color-dark);
   white-space: nowrap;
-  background-color: colors.$MIDDLE50;
+  background-color: var(--color-middle50);
   border-radius: 10px;
 }

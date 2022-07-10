@@ -6,11 +6,11 @@
   z-index: levels.$TOOLTIP;
   display: none;
   width: 100%;
-  filter: drop-shadow(0 0 1px colors.$DARK50);
+  filter: drop-shadow(0 0 1px var(--color-dark50));
 
   .tooltipContainer {
     padding: 5px 8px;
-    color: colors.$DARK50;
+    color: var(--color-dark50);
     white-space: pre-wrap;
     background-color: colors.$WHITE;
     border-radius: 5px;

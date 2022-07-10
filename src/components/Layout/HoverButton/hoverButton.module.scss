@@ -12,7 +12,7 @@
   overflow: hidden;
   background-color: colors.$WHITE;
   border-radius: 35px;
-  box-shadow: 0 0 16px 4px colors.$LIGHT30;
+  box-shadow: 0 0 16px 4px var(--color-light30);
 
   svg {
     width: 30px;

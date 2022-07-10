@@ -1,4 +1,3 @@
-@use 'styles/constants/colors';
 @use 'styles/constants/levels';
 @use 'styles/constants/sizes';
 @use 'styles/mixins/flexbox';
@@ -7,7 +6,7 @@
   width: 100%;
   height: 100%;
   font-family: 'Nanum Myeongjo', serif;
-  color: colors.$DARK;
+  color: var(--color-dark);
 }
 
 .playerInformation {
@@ -20,7 +19,7 @@
     margin-bottom: 8px;
     font-size: sizes.$FONT_SMALL;
     font-style: italic;
-    color: colors.$DARK50;
+    color: var(--color-dark50);
   }
 
   .playerComment {
@@ -30,7 +29,7 @@
     overflow: auto;
     line-height: 20px;
     white-space: pre-wrap;
-    border: 1px solid colors.$DARK30;
+    border: 1px solid var(--color-dark30);
     border-radius: 4px;
   }
 
@@ -43,11 +42,11 @@
   @include flexbox.flexbox(end, center);
   width: 100%;
   margin: 10px 0;
-  color: colors.$DARK30;
+  color: var(--color-dark30);
   user-select: none;
 
   .recommendedName {
-    color: colors.$DARK50;
+    color: var(--color-dark50);
   }
 
   .recommendedStr {

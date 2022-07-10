@@ -1,5 +1,4 @@
 @use 'styles/mixins/flexbox';
-@use 'styles/constants/colors';
 
 .tagSelectorWrapper {
   width: 100%;
@@ -7,7 +6,7 @@
   .tagSelectorLabel {
     margin-bottom: 8px;
     font-family: 'Nanum Myeongjo', serif;
-    color: colors.$DARK50;
+    color: var(--color-dark50);
   }
 
   .tagList {
@@ -19,7 +18,7 @@
     margin-bottom: 16px;
     overflow: auto;
     font-family: 'Nanum Myeongjo', serif;
-    border: 1px solid colors.$DARK30;
+    border: 1px solid var(--color-dark30);
     border-radius: 4px;
 
     li {
