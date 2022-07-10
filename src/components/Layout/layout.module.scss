@@ -11,8 +11,16 @@
   background: linear-gradient(colors.$THEME_SUNRISE_1, colors.$THEME_SUNRISE_2 25%, colors.$THEME_SUNRISE_3);
   transition: background 0.2s;
 
+  :root[color-theme='theme-daylight'] & {
+    background: linear-gradient(colors.$THEME_DAYLIGHT_1, colors.$THEME_DAYLIGHT_2 50%, colors.$THEME_DAYLIGHT_3);
+  }
+
   :root[color-theme='theme-sunset'] & {
     background: linear-gradient(colors.$THEME_SUNSET_1, colors.$THEME_SUNSET_2 75%, colors.$THEME_SUNSET_3);
+  }
+
+  :root[color-theme='theme-night'] & {
+    background: linear-gradient(colors.$THEME_NIGHT_1, colors.$THEME_NIGHT_2 75%, colors.$THEME_NIGHT_3);
   }
 }
 

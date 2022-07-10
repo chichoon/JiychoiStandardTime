@@ -1,22 +1,28 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { toggleTheme } from 'states/colorTheme';
+import { getColorTheme, toggleTheme } from 'states/colorTheme';
 
 import styles from './hoverButton.module.scss';
-import { MoonIcon, SunIcon } from 'assets/svgs';
+import { MoonIcon, SunIcon, SunriseIcon } from 'assets/svgs';
 
 const HoverButton = () => {
   const dispatch = useDispatch();
+  const colorTheme = useSelector(getColorTheme);
+
+  const buttonIcon = {
+    'theme-daylight': <SunIcon />,
+    'theme-night': <MoonIcon />,
+    'theme-sunrise': <SunriseIcon />,
+    'theme-sunset': <SunriseIcon />,
+  }[colorTheme.color] || <SunriseIcon />;
+
   const handleThemeButtonClick = () => {
     dispatch(toggleTheme());
   };
 
   return (
     <button type='button' className={styles.hoverButton} onClick={handleThemeButtonClick}>
-      <div className={styles.iconWrapper}>
-        <SunIcon />
-        <MoonIcon />
-      </div>
+      {buttonIcon}
     </button>
   );
 };
