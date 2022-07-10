@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import cx from 'classnames';
 
@@ -13,10 +12,7 @@ const NAVLINK_DATA = [
 const NavSection = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const [isPlayPage, setIsPlayPage] = useState(false);
-
-  useEffect(() => setIsPlayPage(location.pathname.startsWith('/play')), [location]);
-
+  const isPlayPage = location.pathname.startsWith('/play');
   const handleButtonClick = () => navigate(-1);
 
   return (

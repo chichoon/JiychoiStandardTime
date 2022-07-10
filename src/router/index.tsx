@@ -15,6 +15,7 @@ const Router = () => {
         <Route path='calendar' element={<Calendar />} />
         <Route path='mood' element={<Mood />} />
         <Route path='play/:index' element={<Play />} />
+        <Route path='*' element={<Navigate replace to='main' />} />
       </Route>
     </Routes>
   );
