@@ -1,4 +1,6 @@
+import { useMount } from 'react-use';
 import { Navigate, Route, Routes } from 'react-router-dom';
+import store from 'store';
 
 import { Layout } from 'components';
 import Main from './Main';
@@ -7,6 +9,10 @@ import Play from './Play';
 import Calendar from './Calendar';
 
 const Router = () => {
+  useMount(() => {
+    const colorTheme = store.get('colorTheme');
+    document.documentElement.setAttribute('color-theme', colorTheme ?? 'theme-sunrise');
+  });
   return (
     <Routes>
       <Route path='/' element={<Layout />}>
