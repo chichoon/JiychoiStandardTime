@@ -28,7 +28,6 @@
 
 .layoutWrapper {
   @include flexbox.flexbox(center, center);
-  z-index: levels.$LAYOUT;
   flex-direction: column;
   width: 80%;
   max-width: 480px;
