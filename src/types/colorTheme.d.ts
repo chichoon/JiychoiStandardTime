@@ -1,3 +1,5 @@
 export interface IColorTheme {
-  color: string;
+  color: ColorThemeType;
 }
+
+export type ColorThemeType = 'theme-sunrise' | 'theme-daylight' | 'theme-sunset' | 'theme-night';
