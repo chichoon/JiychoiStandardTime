@@ -12,23 +12,16 @@ import styles from './playerComponent.module.scss';
 
 interface IProps {
   song: ISong;
-  onEnded?: () => void;
   loop: boolean;
 }
 
-const PlayerComponent = ({ song, onEnded, loop }: IProps) => {
+const PlayerComponent = ({ song, loop }: IProps) => {
   const titleRef = useRef(null);
   const isHovering = useHoverDirty(titleRef);
 
   return (
     <div className={styles.playerComponentWrapper}>
-      <ReactPlayer
-        url={`https://www.youtube.com/watch?v=${song.id}`}
-        loop={loop}
-        onEnded={onEnded}
-        width='100%'
-        height='40%'
-      />
+      <ReactPlayer url={`https://www.youtube.com/watch?v=${song.id}`} loop={loop} width='100%' height='40%' />
       <div className={styles.playerInformation}>
         <p className={styles.playerDate}>{`#${song.index} ${dayjs(song.date).format('YYYY년 MM월 DD일')}`}</p>
         <div ref={titleRef} className={cx(styles.playerSongInfo, 'currentSongInfo')}>
