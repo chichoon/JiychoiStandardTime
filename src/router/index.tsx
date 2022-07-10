@@ -1,4 +1,5 @@
 import { useMount } from 'react-use';
+import { useDispatch } from 'react-redux';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import store from 'store';
 
@@ -8,11 +9,17 @@ import Mood from './Mood';
 import Play from './Play';
 import Calendar from './Calendar';
 
+import { setTheme } from 'states/colorTheme';
+
 const Router = () => {
+  const dispatch = useDispatch();
+
   useMount(() => {
     const colorTheme = store.get('colorTheme');
+    dispatch(setTheme(colorTheme));
     document.documentElement.setAttribute('color-theme', colorTheme ?? 'theme-sunrise');
   });
+
   return (
     <Routes>
       <Route path='/' element={<Layout />}>
