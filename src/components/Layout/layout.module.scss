@@ -5,9 +5,15 @@
 
 .layoutBackground {
   @include flexbox.flexbox(center, center);
+  position: relative;
   width: 100vw;
   height: 100vh;
   background: linear-gradient(colors.$THEME_SUNRISE_1, colors.$THEME_SUNRISE_2 25%, colors.$THEME_SUNRISE_3);
+  transition: background 0.2s;
+
+  :root[color-theme='theme-sunset'] & {
+    background: linear-gradient(colors.$THEME_SUNSET_1, colors.$THEME_SUNSET_2 75%, colors.$THEME_SUNSET_3);
+  }
 }
 
 .layoutWrapper {
