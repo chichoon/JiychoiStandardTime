@@ -5,7 +5,7 @@
   @include flexbox.flexbox(between, center);
   flex-direction: row;
   width: 100%;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
 
   button {
     font-size: sizes.$FONT_SUBTITLE;
