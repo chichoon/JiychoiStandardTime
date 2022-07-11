@@ -24,5 +24,3 @@ const Loading = () => {
 };
 
 export default Loading;
-
-// TODO: 여기 엄청 못생김

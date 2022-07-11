@@ -26,5 +26,3 @@ const Error = ({ message }: IProps) => {
 };
 
 export default Error;
-
-// TODO: 여기 엄청 못생김
