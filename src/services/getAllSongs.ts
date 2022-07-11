@@ -1,4 +1,3 @@
-import { setFetchDelay } from '../utils/setFetchDelay';
 import axios from 'axios';
 
 import { ISong } from 'types/musics';
