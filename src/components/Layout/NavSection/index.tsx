@@ -2,6 +2,7 @@ import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import cx from 'classnames';
 
 import styles from './navSection.module.scss';
+import { LeftArrowIcon } from 'assets/svgs';
 
 const NAVLINK_DATA = [
   { link: 'main', title: '오늘' },
@@ -19,7 +20,7 @@ const NavSection = () => {
     <nav className={cx(styles.layoutNavBar, { [styles.isPlayPage]: isPlayPage })}>
       {isPlayPage && (
         <button type='button' onClick={handleButtonClick} className={styles.goBackButton}>
-          {'< 뒤로가기'}
+          <LeftArrowIcon />
         </button>
       )}
       <ul>

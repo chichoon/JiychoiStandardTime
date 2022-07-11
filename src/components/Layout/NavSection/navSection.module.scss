@@ -20,12 +20,12 @@
 
   .goBackButton {
     position: absolute;
-    font-family: 'Nanum Myeongjo', serif;
-    font-size: sizes.$FONT_SUBTITLE;
-    font-weight: 700;
-    line-height: sizes.$FONT_SUBTITLE;
-    color: var(--color-dark30);
     transition: color 0.2s ease-in;
+
+    svg {
+      height: 20px;
+      fill: var(--color-dark30);
+    }
 
     &:hover {
       color: var(--color-dark50);
