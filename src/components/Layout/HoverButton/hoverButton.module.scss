@@ -10,12 +10,77 @@
   width: 70px;
   height: 70px;
   overflow: hidden;
-  background-color: colors.$WHITE;
+  border: 5px solid colors.$WHITE;
   border-radius: 35px;
   box-shadow: 0 0 16px 4px var(--color-light30);
 
   svg {
+    z-index: levels.$HOVER_BUTTON_INNER;
     width: 30px;
-    fill: red;
+
+    :root[color-theme='theme-sunrise'] &,
+    :root[color-theme='theme-daylight'] & {
+      fill: var(--color-dark50);
+    }
+
+    :root[color-theme='theme-sunset'] &,
+    :root[color-theme='theme-night'] & {
+      fill: colors.$WHITE;
+    }
   }
+}
+
+.hoverButtonInner {
+  @include flexbox.flexbox(center, center);
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  :root[color-theme='theme-sunrise'] & {
+    background-color: colors.$THEME_SUNRISE;
+  }
+
+  :root[color-theme='theme-daylight'] & {
+    background-color: colors.$THEME_DAYLIGHT;
+  }
+
+  :root[color-theme='theme-sunset'] & {
+    background-color: colors.$THEME_SUNSET;
+  }
+
+  :root[color-theme='theme-night'] & {
+    background-color: colors.$THEME_NIGHT;
+  }
+}
+
+.hoverButtonInner::after {
+  position: absolute;
+  right: -10px;
+  bottom: -10px;
+  width: 0;
+  height: 0;
+  content: '';
+  transition: 0.2s linear;
+
+  :root[color-theme='theme-sunrise'] & {
+    background-color: colors.$THEME_DAYLIGHT;
+  }
+
+  :root[color-theme='theme-daylight'] & {
+    background-color: colors.$THEME_SUNSET;
+  }
+
+  :root[color-theme='theme-sunset'] & {
+    background-color: colors.$THEME_NIGHT;
+  }
+
+  :root[color-theme='theme-night'] & {
+    background-color: colors.$THEME_SUNRISE;
+  }
+}
+
+.hoverButtonInner:hover::after {
+  width: 50px;
+  height: 50px;
+  border-radius: 35px;
 }
