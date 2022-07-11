@@ -15,9 +15,9 @@ const Router = () => {
   const dispatch = useDispatch();
 
   useMount(() => {
-    const colorTheme = store.get('colorTheme');
+    const colorTheme = store.get('colorTheme') || 'theme-sunrise';
     dispatch(setTheme(colorTheme));
-    document.documentElement.setAttribute('color-theme', colorTheme ?? 'theme-sunrise');
+    document.documentElement.setAttribute('color-theme', colorTheme);
   });
 
   return (
