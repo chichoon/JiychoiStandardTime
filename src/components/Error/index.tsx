@@ -12,7 +12,7 @@ const Error = ({ message }: IProps) => {
     <div className={styles.errorWrapper}>
       <div className={styles.errorComponentBox}>
         <ErrorIcon />
-      </div>{' '}
+      </div>
       <div className={styles.errorInformation}>
         <p className={styles.playerDate}>#0 Invalid Date</p>
         <div className={cx(styles.errorInfo, 'currentSongInfo')}>
