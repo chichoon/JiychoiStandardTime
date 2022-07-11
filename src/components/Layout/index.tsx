@@ -15,9 +15,9 @@ const Layout = () => {
   const isHovering = useHoverDirty(imageRef);
 
   const playerImage = () => {
-    if (isHovering) return 'images/question-image.png';
-    if (isPlaying) return 'images/playing-image.gif';
-    return 'images/main-image.gif';
+    if (isHovering) return '/images/question-image.png';
+    if (isPlaying) return '/images/playing-image.gif';
+    return '/images/main-image.gif';
   };
 
   return (
