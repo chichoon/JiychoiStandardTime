@@ -1,12 +1,14 @@
 import cx from 'classnames';
 
+import LoadingAnimationBar from './LoadingAnimationBar';
+
 import styles from './loading.module.scss';
 
 const Loading = () => {
   return (
     <div className={styles.loadingWrapper}>
       <div className={styles.loadingAnimationBox}>
-        <div className={styles.loadingAnimation} />
+        <LoadingAnimationBar />
       </div>
       <div className={styles.loadingInformation}>
         <p className={styles.playerDate}>#∞</p>
