@@ -1,10 +1,12 @@
 import { useRef } from 'react';
-import { useHoverDirty } from 'react-use';
+import { useDispatch } from 'react-redux';
+import { useHoverDirty, useUnmount } from 'react-use';
 import ReactPlayer from 'react-player/lazy';
 import dayjs from 'dayjs';
 import cx from 'classnames';
 
 import Tooltip from 'components/Tooltip';
+import { setOnPause, setOnPlay } from 'states/isPlaying';
 import { ISong } from 'types/musics';
 import TagBox from './TagBox';
 
@@ -12,16 +14,35 @@ import styles from './playerComponent.module.scss';
 
 interface IProps {
   song: ISong;
-  loop: boolean;
 }
 
-const PlayerComponent = ({ song, loop }: IProps) => {
+const PlayerComponent = ({ song }: IProps) => {
   const titleRef = useRef(null);
   const isHovering = useHoverDirty(titleRef);
+  const dispatch = useDispatch();
+
+  const handlePlaySong = () => {
+    dispatch(setOnPlay());
+  };
+
+  const handlePauseSong = () => {
+    dispatch(setOnPause());
+  };
+
+  useUnmount(() => {
+    dispatch(setOnPause());
+  });
 
   return (
     <div className={styles.playerComponentWrapper}>
-      <ReactPlayer url={`https://www.youtube.com/watch?v=${song.id}`} loop={loop} width='100%' height='40%' />
+      <ReactPlayer
+        url={`https://www.youtube.com/watch?v=${song.id}`}
+        width='100%'
+        height='40%'
+        onPlay={handlePlaySong}
+        onPause={handlePauseSong}
+        onEnded={handlePauseSong}
+      />
       <div className={styles.playerInformation}>
         <p className={styles.playerDate}>{`#${song.index} ${dayjs(song.date).format('YYYY년 MM월 DD일')}`}</p>
         <div ref={titleRef} className={cx(styles.playerSongInfo, 'currentSongInfo')}>
