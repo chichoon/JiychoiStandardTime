@@ -7,7 +7,7 @@ import { useFetchLatestSong } from 'hooks';
 
 const MainInner = () => {
   const todaySong = useFetchLatestSong();
-  return <PlayerComponent song={todaySong} loop />;
+  return <PlayerComponent song={todaySong} />;
 };
 
 const Main = () => {

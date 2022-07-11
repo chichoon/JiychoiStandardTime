@@ -12,7 +12,7 @@ interface IProps {
 
 const PlayInner = ({ index }: IProps) => {
   const indexSong = useFetchSongByIndex(index);
-  return <PlayerComponent song={indexSong} loop />;
+  return <PlayerComponent song={indexSong} />;
 };
 
 const Play = () => {
