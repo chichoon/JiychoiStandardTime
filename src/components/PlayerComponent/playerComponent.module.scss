@@ -29,6 +29,7 @@
     overflow: auto;
     line-height: 20px;
     white-space: pre-wrap;
+    user-select: none;
     border: 1px solid var(--color-dark30);
     border-radius: 4px;
   }
