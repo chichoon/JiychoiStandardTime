@@ -14,7 +14,7 @@ const colorThemeSlice = createSlice({
       return newColorTheme;
     },
     toggleTheme: (state: string) => {
-      let newColorTheme: string;
+      let newColorTheme = 'theme-sunrise';
       switch (state) {
         case 'theme-sunrise':
           newColorTheme = 'theme-daylight';
