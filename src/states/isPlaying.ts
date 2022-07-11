@@ -1,22 +1,13 @@
-import { IIsPlaying } from '../types/isPlaying.d';
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 import { RootState } from 'states';
 
-const INIT_PLAYING: IIsPlaying = {
-  isPlaying: false,
-};
-
 const isPlayingSlice = createSlice({
   name: 'isPlaying',
-  initialState: INIT_PLAYING,
+  initialState: false,
   reducers: {
-    setOnPlay: (state: IIsPlaying) => {
-      state.isPlaying = true;
-    },
-    setOnPause: (state: IIsPlaying) => {
-      state.isPlaying = false;
-    },
+    setOnPlay: (_) => true,
+    setOnPause: (_) => false,
   },
 });
 
@@ -24,4 +15,4 @@ export const { setOnPlay, setOnPause } = isPlayingSlice.actions;
 
 export default isPlayingSlice.reducer;
 
-export const getIsPlaying = (state: RootState): IIsPlaying => state.isPlaying;
+export const getIsPlaying = (state: RootState): boolean => state.isPlaying;

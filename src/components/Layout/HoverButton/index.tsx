@@ -15,7 +15,7 @@ const HoverButton = () => {
     'theme-night': <MoonIcon />,
     'theme-sunrise': <SunIcon />,
     'theme-sunset': <MoonIcon />,
-  }[colorTheme.color] || <SunIcon />;
+  }[colorTheme] || <SunIcon />;
 
   const handleThemeButtonClick = () => {
     dispatch(toggleTheme());

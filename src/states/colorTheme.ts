@@ -2,24 +2,20 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import store from 'store';
 
 import { RootState } from 'states';
-import { IColorTheme, ColorThemeType } from 'types/colorTheme';
-
-const INIT_THEME: IColorTheme = {
-  color: 'theme-sunrise',
-};
 
 const colorThemeSlice = createSlice({
   name: 'colorTheme',
-  initialState: INIT_THEME,
+  initialState: 'theme-sunrise',
   reducers: {
-    setTheme: (state: IColorTheme, action: PayloadAction<ColorThemeType>) => {
-      state.color = action.payload;
-      document.documentElement.setAttribute('color-theme', action.payload);
-      store.set('colorTheme', action.payload);
+    setTheme: (_, action: PayloadAction<string>) => {
+      const newColorTheme = action.payload;
+      document.documentElement.setAttribute('color-theme', newColorTheme);
+      store.set('colorTheme', newColorTheme);
+      return newColorTheme;
     },
-    toggleTheme: (state: IColorTheme) => {
-      let newColorTheme: ColorThemeType;
-      switch (state.color) {
+    toggleTheme: (state: string) => {
+      let newColorTheme: string;
+      switch (state) {
         case 'theme-sunrise':
           newColorTheme = 'theme-daylight';
           break;
@@ -34,9 +30,9 @@ const colorThemeSlice = createSlice({
           newColorTheme = 'theme-sunrise';
           break;
       }
-      state.color = newColorTheme;
       document.documentElement.setAttribute('color-theme', newColorTheme);
       store.set('colorTheme', newColorTheme);
+      return newColorTheme;
     },
   },
 });
@@ -45,4 +41,4 @@ export const { setTheme, toggleTheme } = colorThemeSlice.actions;
 
 export default colorThemeSlice.reducer;
 
-export const getColorTheme = (state: RootState): IColorTheme => state.colorTheme;
+export const getColorTheme = (state: RootState): string => state.colorTheme as string;
