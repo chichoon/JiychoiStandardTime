@@ -2,15 +2,15 @@
 
 @keyframes shortlong {
   0% {
-    height: 60px;
-  }
-
-  40% {
     height: 20px;
   }
 
-  80% {
+  40% {
     height: 60px;
+  }
+
+  80% {
+    height: 20px;
   }
 }
 
@@ -22,7 +22,7 @@
 
   .loadingAnimation {
     width: 20px;
-    height: 60px;
+    height: 20px;
     background-color: var(--color-dark30);
     animation: shortlong 1.5s infinite;
 
