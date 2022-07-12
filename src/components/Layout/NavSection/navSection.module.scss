@@ -4,7 +4,7 @@
 
 .layoutNavBar {
   width: 100%;
-  margin: 20px 0;
+  margin-top: 20px;
 
   & > ul {
     @include flexbox.flexbox(center, start);

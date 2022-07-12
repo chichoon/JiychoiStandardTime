@@ -4,10 +4,11 @@
 @use 'styles/mixins/flexbox';
 
 .layoutBackground {
-  @include flexbox.flexbox(center, center);
+  @include flexbox.flexbox(center, top);
   position: relative;
   width: 100vw;
   height: 100vh;
+  padding: 20px 0;
 
   :root[color-theme='theme-sunrise'] & {
     background: linear-gradient(var(--color-theme1), var(--color-theme2) 25%, var(--color-theme3));
@@ -31,7 +32,7 @@
   flex-direction: column;
   width: 80%;
   max-width: 480px;
-  height: 90%;
+  height: 100%;
 
   & > img {
     width: sizes.$LAYOUT_IMAGE_SIZE;
@@ -48,7 +49,7 @@
   border-radius: sizes.$LAYOUT_BORDER_RADIUS;
   box-shadow: 0 0 16px 4px var(--color-light30);
 
-  .layoutHeader {
+  .layoutTitle {
     margin-bottom: 4px;
     font-family: 'Gowun Batang', serif;
     font-size: sizes.$FONT_TITLE;
@@ -57,11 +58,15 @@
     user-select: none;
   }
 
-  .layoutSubHeader {
+  .layoutSubTitle {
     font-family: Raleway, sans-serif;
     color: var(--color-dark50);
     text-align: center;
     letter-spacing: 0.5px;
     user-select: none;
+  }
+
+  header {
+    margin-bottom: 20px;
   }
 }

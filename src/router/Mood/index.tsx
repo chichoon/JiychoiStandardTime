@@ -9,14 +9,14 @@ import TagSelector from './TagSelector';
 const Mood = () => {
   const handleErrorFallback = () => <Error message='리스트를 불러올 수 없어요' />;
   return (
-    <div className={cx('innerContainer')}>
+    <main className={cx('innerContainer')}>
       <TagSelector />
       <ErrorBoundary FallbackComponent={handleErrorFallback}>
         <Suspense fallback={<Loading />}>
           <FilteredSongList />
         </Suspense>
       </ErrorBoundary>
-    </div>
+    </main>
   );
 };
 

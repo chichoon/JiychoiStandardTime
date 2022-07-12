@@ -11,13 +11,13 @@ const Calendar = () => {
   const handleErrorFallback = () => <Error message='달력을 불러올 수 없어요' />;
 
   return (
-    <div className={cx('innerContainer', styles.calendarWrapper)}>
+    <main className={cx('innerContainer', styles.calendarWrapper)}>
       <ErrorBoundary FallbackComponent={handleErrorFallback}>
         <Suspense fallback={<Loading />}>
           <OverviewCalendar />
         </Suspense>
       </ErrorBoundary>
-    </div>
+    </main>
   );
 };
 

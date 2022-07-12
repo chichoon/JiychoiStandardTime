@@ -13,13 +13,13 @@ const MainInner = () => {
 const Main = () => {
   const handleErrorFallback = () => <Error message='노래를 불러올 수 없어요' />;
   return (
-    <div className={cx('innerContainer')}>
+    <main className={cx('innerContainer')}>
       <ErrorBoundary FallbackComponent={handleErrorFallback}>
         <Suspense fallback={<Loading />}>
           <MainInner />
         </Suspense>
       </ErrorBoundary>
-    </div>
+    </main>
   );
 };
 

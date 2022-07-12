@@ -26,9 +26,11 @@ const Layout = () => {
       <div className={styles.layoutWrapper}>
         <img ref={imageRef} src={playerImage()} alt='main-profile' />
         <div className={styles.layoutContainer}>
-          <h1 className={styles.layoutHeader}>#지최표준시</h1>
-          <p className={styles.layoutSubHeader}>jiychoi standard time</p>
-          <NavSection />
+          <header>
+            <h1 className={styles.layoutTitle}>#지최표준시</h1>
+            <p className={styles.layoutSubTitle}>jiychoi standard time</p>
+            <NavSection />
+          </header>
           <Outlet />
         </div>
       </div>
