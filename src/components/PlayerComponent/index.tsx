@@ -36,6 +36,7 @@ const PlayerComponent = ({ song }: IProps) => {
   return (
     <div className={styles.playerComponentWrapper}>
       <ReactPlayer
+        key={`player-${song.id}`}
         url={`https://www.youtube.com/watch?v=${song.id}`}
         width='100%'
         height='40%'

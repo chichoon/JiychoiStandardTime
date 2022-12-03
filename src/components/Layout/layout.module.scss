@@ -34,7 +34,11 @@
   max-width: 480px;
   height: 100%;
 
-  & > img {
+  & > button {
+    height: sizes.$LAYOUT_IMAGE_SIZE;
+  }
+
+  button > img {
     width: sizes.$LAYOUT_IMAGE_SIZE;
     height: sizes.$LAYOUT_IMAGE_SIZE;
     object-fit: cover;
