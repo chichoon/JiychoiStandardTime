@@ -1,5 +1,4 @@
-{
-  "songs": [
+[
     {
       "index": 0,
       "title": "맞은편 미래",
@@ -1169,7 +1168,7 @@
       "id": "U_uFnPQFhh4",
       "date": "2022-01-31 10:10",
       "tagList": ["slow", "band", "sad", "full", "peaceful", "man"]
-    }
+    },
     {
       "index": 130,
       "title": "별이었던 너",
@@ -1585,4 +1584,3 @@
       "tagList": ["loud", "sad", "band", "woman"]
     }
   ]
-}
