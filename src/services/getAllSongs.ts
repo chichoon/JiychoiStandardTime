@@ -4,7 +4,7 @@ import { ISong } from 'types/musics';
 
 const getAllSongs = (): Promise<ISong[]> =>
   axios.get('/jst-songlist.json').then((response) => {
-    const allSongsList: ISong[] = response.data.songs;
+    const allSongsList: ISong[] = response.data;
 
     return allSongsList;
   });
