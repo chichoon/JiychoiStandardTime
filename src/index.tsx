@@ -7,7 +7,6 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 
 import Router from 'router';
 import { store } from 'states';
-import reportWebVitals from './reportWebVitals';
 
 import 'styles/index.scss';
 import 'styles/global.scss';
@@ -33,5 +32,3 @@ root.render(
     </BrowserRouter>
   </React.StrictMode>
 );
-
-reportWebVitals();
