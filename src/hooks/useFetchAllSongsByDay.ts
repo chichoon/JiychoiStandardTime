@@ -1,19 +1,9 @@
-import { useQuery } from 'react-query';
+import { useFetchAllSongs } from './useFetchAllSongs';
 
-import { getAllSongsByDay } from 'services';
-import { ISongsByDay } from 'types/musics';
+export function useFetchAllSongsByDay() {
+  const res = useFetchAllSongs();
 
-const INIT_DATA: ISongsByDay = {};
-
-const useFetchAllSongsByDay = () => {
-  const { data = INIT_DATA } = useQuery(['allSongs'], getAllSongsByDay, {
-    refetchOnWindowFocus: false,
-    staleTime: 1000 * 60 * 60 * 12,
-    cacheTime: 1000 * 60 * 60 * 12,
-    retry: false,
+  res.map(({ data }) => {
+    console.log(data);
   });
-
-  return data;
-};
-
-export default useFetchAllSongsByDay;
+}

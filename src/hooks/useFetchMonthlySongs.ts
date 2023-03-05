@@ -1,9 +1,10 @@
 import { useQuery } from 'react-query';
 
 import { getMonthlySongs } from 'services';
+import { SongType } from 'types/musics';
 
-export function useFetchMonthlySongsQuery(month: string, year: string) {
-  return useQuery([`songlist-${year}${month}`], getMonthlySongs(year, month), {
+export function useFetchMonthlySongs(month: string, year: string): SongType[] {
+  const { data = [] } = useQuery([`songlist-${year}${month}`], getMonthlySongs(year, month), {
     refetchOnWindowFocus: false,
     staleTime: 1000 * 60 * 60 * 12,
     cacheTime: 1000 * 60 * 60 * 12,
@@ -11,4 +12,6 @@ export function useFetchMonthlySongsQuery(month: string, year: string) {
     useErrorBoundary: true,
     suspense: true,
   });
+
+  return data;
 }
