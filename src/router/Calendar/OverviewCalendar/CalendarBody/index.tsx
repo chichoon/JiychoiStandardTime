@@ -2,7 +2,7 @@ import { Dayjs } from 'dayjs';
 
 import CalendarDateElement from './CalendarDateElement';
 import { useFetchAllSongsByDay } from 'hooks';
-import { ISong } from 'types/musics';
+import { SongType } from 'types/musics';
 import { getMonthArray } from 'utils/calendarUtils';
 
 import styles from './calendarBody.module.scss';
@@ -15,7 +15,7 @@ const CalendarBody = ({ date }: IProps) => {
   const monthArray = getMonthArray(date);
   const allSongsByDay = useFetchAllSongsByDay();
 
-  const getSongOfDay = (v: Dayjs): ISong | undefined => {
+  const getSongOfDay = (v: Dayjs): SongType | undefined => {
     return allSongsByDay[v.format('YYYY-MM-DD')] ?? undefined;
   };
 

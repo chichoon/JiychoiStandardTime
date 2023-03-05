@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-import { ISong } from 'types/musics';
+import { SongType } from 'types/musics';
 
-const getAllSongs = (): Promise<ISong[]> =>
+const getAllSongs = (): Promise<SongType[]> =>
   axios.get('/jst-songlist.json').then((response) => {
-    const allSongsList: ISong[] = response.data;
+    const allSongsList: SongType[] = response.data;
 
     return allSongsList;
   });

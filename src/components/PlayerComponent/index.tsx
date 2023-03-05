@@ -7,13 +7,13 @@ import cx from 'classnames';
 
 import Tooltip from 'components/Tooltip';
 import { setOnPause, setOnPlay } from 'states/isPlaying';
-import { ISong } from 'types/musics';
+import { SongType } from 'types/musics';
 import TagBox from './TagBox';
 
 import styles from './playerComponent.module.scss';
 
 interface IProps {
-  song: ISong;
+  song: SongType;
 }
 
 const PlayerComponent = ({ song }: IProps) => {

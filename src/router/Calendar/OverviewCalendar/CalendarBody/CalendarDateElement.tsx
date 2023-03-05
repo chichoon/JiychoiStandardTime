@@ -4,14 +4,14 @@ import { useHoverDirty } from 'react-use';
 import dayjs, { Dayjs } from 'dayjs';
 import cx from 'classnames';
 
-import { ISong } from 'types/musics';
+import { SongType } from 'types/musics';
 import { Tooltip } from 'components';
 
 import styles from './calendarBody.module.scss';
 
 interface IProps {
   date: Dayjs;
-  songOfTheDay?: ISong;
+  songOfTheDay?: SongType;
   ifOtherMonth?: boolean;
 }
 

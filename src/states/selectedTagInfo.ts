@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { RootState } from 'states';
-import { TagType, ITagInfo } from 'types/tags';
+import { TagType, TagListType } from 'types/tags';
 
-const INIT_TAGINFO: ITagInfo = {
+const INIT_TAGINFO: TagListType = {
   selectableTags: [
     'excited',
     'loud',
@@ -30,11 +30,11 @@ const selectedTagInfoSlice = createSlice({
   name: 'selectedTagInfo',
   initialState: INIT_TAGINFO,
   reducers: {
-    selectTag: (state: ITagInfo, action: PayloadAction<TagType>) => {
+    selectTag: (state: TagListType, action: PayloadAction<TagType>) => {
       state.selectableTags = state.selectableTags.filter((tag) => tag !== action.payload);
       state.selectedTags.push(action.payload);
     },
-    deselectTag: (state: ITagInfo, action: PayloadAction<TagType>) => {
+    deselectTag: (state: TagListType, action: PayloadAction<TagType>) => {
       state.selectableTags.push(action.payload);
       state.selectedTags = state.selectedTags.filter((tag) => tag !== action.payload);
     },

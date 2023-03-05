@@ -1,11 +1,11 @@
 import dayjs from 'dayjs';
 
 import getAllSongs from './getAllSongs';
-import { ISongsByDay } from 'types/musics';
+import { SongByDayType } from 'types/musics';
 
-const getAllSongsByDay = (): Promise<ISongsByDay> =>
+const getAllSongsByDay = (): Promise<SongByDayType> =>
   getAllSongs().then((allSongsList) => {
-    const allSongsByDay: ISongsByDay = {};
+    const allSongsByDay: SongByDayType = {};
     for (const song of allSongsList) {
       const key = dayjs(song.date).format('YYYY-MM-DD');
       allSongsByDay[key] = song;

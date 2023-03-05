@@ -1,6 +1,6 @@
-import { ISong } from 'types/musics';
+import { SongType } from 'types/musics';
 
-export const INIT_DATA: ISong = {
+export const INIT_DATA: SongType = {
   index: 0,
   title: '',
   artist: '',
