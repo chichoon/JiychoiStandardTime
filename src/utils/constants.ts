@@ -1,3 +1,5 @@
+import { SongType } from 'types/musics';
+
 export const YEAR_LIST = [
   { year: '2021', month: '08' },
   { year: '2021', month: '09' },
@@ -20,3 +22,13 @@ export const YEAR_LIST = [
   { year: '2023', month: '02' },
   { year: '2023', month: '03' },
 ];
+
+export const INIT_DATA: SongType = {
+  index: 0,
+  title: '',
+  artist: '',
+  comment: '',
+  id: '',
+  date: '',
+  tagList: [],
+};
