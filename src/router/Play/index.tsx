@@ -4,14 +4,14 @@ import { useParams } from 'react-router-dom';
 import cx from 'classnames';
 
 import { Error, Loading, PlayerComponent } from 'components';
-import { useFetchSongByIndex } from 'hooks';
+import { INIT_DATA } from 'utils/constants';
 
 interface IProps {
   index: number;
 }
 
 const PlayInner = ({ index }: IProps) => {
-  const indexSong = useFetchSongByIndex(index);
+  const indexSong = INIT_DATA; // TODO: 수정
   return <PlayerComponent song={indexSong} />;
 };
 

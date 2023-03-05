@@ -3,19 +3,19 @@ import { useSelector } from 'react-redux';
 import { useHoverDirty } from 'react-use';
 import { Outlet, useNavigate } from 'react-router-dom';
 
-import { useFetchLatestSong } from 'hooks';
 import { getIsPlaying } from 'states/isPlaying';
 import NavSection from './NavSection';
 import HoverButton from './HoverButton';
 
 import styles from './layout.module.scss';
+import { INIT_DATA } from 'utils/constants';
 
 const Layout = () => {
   const imageRef = useRef(null);
   const isPlaying = useSelector(getIsPlaying);
   const isHovering = useHoverDirty(imageRef);
   const navigate = useNavigate();
-  const lastSong = useFetchLatestSong();
+  const lastSong = INIT_DATA; // TODO: 수정
 
   const playerImage = () => {
     if (isHovering) return '/images/question-image.png';

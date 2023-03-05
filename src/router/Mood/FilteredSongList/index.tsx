@@ -1,13 +1,13 @@
+import { SongType } from 'types/musics';
 import FilteredSongElement from './FilteredSongElement';
-import { useFetchFilteredSongs } from 'hooks';
 
 import styles from './filteredSongList.module.scss';
 
 const FilteredSongList = () => {
-  const songList = useFetchFilteredSongs();
+  const songList: SongType[] = []; //TODO: 수정
   return (
     <ul className={styles.filteredSongListWrapper}>
-      {songList?.map((song) => (
+      {songList.map((song) => (
         <FilteredSongElement key={`filtered-${song.index}`} song={song} />
       ))}
     </ul>

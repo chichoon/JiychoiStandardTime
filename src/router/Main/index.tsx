@@ -3,10 +3,10 @@ import { ErrorBoundary } from 'react-error-boundary';
 import cx from 'classnames';
 
 import { Error, Loading, PlayerComponent } from 'components';
-import { useFetchLatestSong } from 'hooks';
+import { INIT_DATA } from 'utils/constants';
 
 const MainInner = () => {
-  const todaySong = useFetchLatestSong();
+  const todaySong = INIT_DATA; // TODO: 수정
   return <PlayerComponent song={todaySong} />;
 };
 
