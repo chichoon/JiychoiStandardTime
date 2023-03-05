@@ -4,11 +4,11 @@ import { useHoverDirty } from 'react-use';
 import { Outlet, useNavigate } from 'react-router-dom';
 
 import { getIsPlaying } from 'states/isPlaying';
+import { INIT_DATA } from 'utils/constants';
 import NavSection from './NavSection';
 import HoverButton from './HoverButton';
 
 import styles from './layout.module.scss';
-import { INIT_DATA } from 'utils/constants';
 
 const Layout = () => {
   const imageRef = useRef(null);

@@ -2,9 +2,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import cx from 'classnames';
 
 import { getColorTheme, toggleTheme } from 'states/colorTheme';
+import { MoonIcon, SunIcon } from 'assets/svgs';
 
 import styles from './hoverButton.module.scss';
-import { MoonIcon, SunIcon } from 'assets/svgs';
 
 const HoverButton = () => {
   const dispatch = useDispatch();

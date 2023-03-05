@@ -1,8 +1,9 @@
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import cx from 'classnames';
 
-import styles from './navSection.module.scss';
 import { LeftArrowIcon } from 'assets/svgs';
+
+import styles from './navSection.module.scss';
 
 const NAVLINK_DATA = [
   { link: 'main', title: '오늘' },

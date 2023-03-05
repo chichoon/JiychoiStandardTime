@@ -41,6 +41,7 @@
     "react/no-array-index-key": "off",
     "react/jsx-no-bind": "off",
     "react-hooks/exhaustive-deps": "off",
+    "no-param-reassign": "off",
     "no-alert": "off",
     "func-names": "off",
     "lines-between-class-members": "off",
