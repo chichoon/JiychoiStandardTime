@@ -4,6 +4,7 @@ import cx from 'classnames';
 
 import { Error, Loading, PlayerComponent } from 'components';
 import { useFetchAllSongs } from 'hooks';
+import { INIT_DATA } from 'utils/constants';
 
 const Main = () => {
   const songList = useFetchAllSongs();
@@ -13,7 +14,7 @@ const Main = () => {
     <main className={cx('innerContainer')}>
       <ErrorBoundary FallbackComponent={handleErrorFallback}>
         <Suspense fallback={<Loading />}>
-          <PlayerComponent song={songList[songList.length - 1]} />
+          <PlayerComponent song={songList[songList.length - 1] ?? INIT_DATA} />
         </Suspense>
       </ErrorBoundary>
     </main>

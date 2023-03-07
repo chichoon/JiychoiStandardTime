@@ -24,8 +24,8 @@ export const YEAR_LIST = [
 ];
 
 export const INIT_DATA: SongType = {
-  index: 0,
-  title: '',
+  index: -1,
+  title: 'No Title',
   artist: '',
   comment: '',
   id: '',
