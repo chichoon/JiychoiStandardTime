@@ -33,7 +33,7 @@ const Tag = ({ tagName, onClick }: IProps) => {
   }[tagName];
 
   return (
-    <button type='button' onClick={onClick ?? undefined} className={styles.tag}>
+    <button type='button' onClick={onClick} className={styles.tag}>
       {korTagName}
     </button>
   );

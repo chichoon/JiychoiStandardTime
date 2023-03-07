@@ -1,8 +1,10 @@
-import { TagType } from 'types/tags';
+import { useSelector } from 'react-redux';
+import { getSelectedTags } from 'states/selectedTagInfo';
 import { useFetchAllSongs } from './useFetchAllSongs';
 
-export function useFetchFilteredSongs(tagList: TagType[]) {
-  const songlist = useFetchAllSongs();
+export function useFetchFilteredSongs() {
+  const songList = useFetchAllSongs();
+  const tagList = useSelector(getSelectedTags);
 
-  return songlist.filter((song) => tagList.every((tag) => song.tagList.includes(tag)));
+  return songList.filter((song) => tagList.every((tag) => song.tagList.includes(tag)));
 }

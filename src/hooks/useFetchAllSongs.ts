@@ -7,7 +7,7 @@ import { YEAR_LIST } from 'utils/constants';
 export function useFetchAllSongs() {
   const res = useQueries(
     YEAR_LIST.map(({ month, year }) => ({
-      queryKey: [`songlist-${year}${month}`],
+      queryKey: [`songList-${year}${month}`],
       queryFn: getMonthlySongs(year, month),
       refetchOnWindowFocus: false,
       staleTime: 1000 * 60 * 60 * 12,
