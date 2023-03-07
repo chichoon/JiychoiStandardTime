@@ -1,5 +1,6 @@
 import { Dayjs } from 'dayjs';
 
+import { useFetchAllSongsByDay } from 'hooks';
 import { SongByDayType, SongType } from 'types/musics';
 import { getMonthArray } from 'utils/calendarUtils';
 import CalendarDateElement from './CalendarDateElement';
@@ -12,7 +13,8 @@ interface IProps {
 
 const CalendarBody = ({ date }: IProps) => {
   const monthArray = getMonthArray(date);
-  const allSongsByDay: SongByDayType = {};
+  useFetchAllSongsByDay();
+  const allSongsByDay: SongByDayType = {}; // TODO: 수정
 
   const getSongOfDay = (v: Dayjs): SongType | undefined => {
     return allSongsByDay[v.format('YYYY-MM-DD')] ?? undefined;

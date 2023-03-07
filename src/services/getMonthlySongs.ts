@@ -3,7 +3,7 @@ import { SongType } from 'types/musics';
 
 export function getMonthlySongs(year: string, month: string): () => Promise<SongType[]> {
   return async function () {
-    const { data } = await axios.get(`/jst-songlist-${year}${month}`);
+    const { data } = await axios.get(`/songlist/jst-songlist-${year}${month}`);
     return data;
   };
 }
