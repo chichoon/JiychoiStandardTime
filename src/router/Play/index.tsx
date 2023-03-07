@@ -6,11 +6,11 @@ import cx from 'classnames';
 import { Error, Loading, PlayerComponent } from 'components';
 import { INIT_DATA } from 'utils/constants';
 
-interface IProps {
+interface Props {
   index: number;
 }
 
-const PlayInner = ({ index }: IProps) => {
+const PlayInner = ({ index }: Props) => {
   const indexSong = INIT_DATA; // TODO: 수정
   return <PlayerComponent song={indexSong} />;
 };

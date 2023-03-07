@@ -4,12 +4,12 @@ import { TagType } from 'types/tags';
 
 import styles from './tag.module.scss';
 
-interface IProps {
+interface Props {
   tagName: TagType;
   onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
-const Tag = ({ tagName, onClick }: IProps) => {
+const Tag = ({ tagName, onClick }: Props) => {
   const korTagName = {
     excited: '신나요',
     sad: '아련해요',

@@ -13,6 +13,7 @@ export function useFetchAllSongs() {
       staleTime: 1000 * 60 * 60 * 12,
       cacheTime: 1000 * 60 * 60 * 12,
       suspense: true,
+      useErrorBoundary: true,
       retry: false,
     }))
   );

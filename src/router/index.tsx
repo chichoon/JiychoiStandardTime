@@ -33,6 +33,4 @@ const Router = () => {
   );
 };
 
-// TODO: 나만의 재생목록
-
 export default Router;

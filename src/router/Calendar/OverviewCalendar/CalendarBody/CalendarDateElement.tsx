@@ -9,7 +9,7 @@ import { Tooltip } from 'components';
 
 import styles from './calendarBody.module.scss';
 
-interface IProps {
+interface Props {
   date: Dayjs;
   songOfTheDay?: SongType;
   ifOtherMonth?: boolean;
@@ -17,7 +17,7 @@ interface IProps {
 
 const today = dayjs();
 
-const CalendarDateElement = ({ date, songOfTheDay, ifOtherMonth }: IProps) => {
+const CalendarDateElement = ({ date, songOfTheDay, ifOtherMonth }: Props) => {
   const buttonRef = useRef(null);
   const isHovering = useHoverDirty(buttonRef);
   const tooltipString = songOfTheDay ? `${songOfTheDay.date}\n${songOfTheDay.title}` : '';

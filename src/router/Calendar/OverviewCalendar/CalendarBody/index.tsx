@@ -1,23 +1,24 @@
 import { Dayjs } from 'dayjs';
 
-import { useFetchAllSongsByDay } from 'hooks';
-import { SongByDayType, SongType } from 'types/musics';
+import { useFetchMonthlySongsByDay } from 'hooks';
+import { SongType } from 'types/musics';
 import { getMonthArray } from 'utils/calendarUtils';
 import CalendarDateElement from './CalendarDateElement';
 
 import styles from './calendarBody.module.scss';
 
-interface IProps {
+interface Props {
   date: Dayjs;
 }
 
-const CalendarBody = ({ date }: IProps) => {
+const CalendarBody = ({ date }: Props) => {
+  const year = date.year().toString().padStart(2, '0');
+  const month = date.month().toString().padStart(2, '0');
   const monthArray = getMonthArray(date);
-  useFetchAllSongsByDay();
-  const allSongsByDay: SongByDayType = {}; // TODO: 수정
+  const allSongsByDay = useFetchMonthlySongsByDay(month, year);
 
-  const getSongOfDay = (v: Dayjs): SongType | undefined => {
-    return allSongsByDay[v.format('YYYY-MM-DD')] ?? undefined;
+  const getSongOfDay = (v: Dayjs): SongType => {
+    return allSongsByDay[v.format('YYYY-MM-DD')];
   };
 
   return (

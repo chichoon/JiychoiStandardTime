@@ -5,11 +5,11 @@ import { SongType } from 'types/musics';
 
 import styles from './filteredSongList.module.scss';
 
-interface IProps {
+interface Props {
   song: SongType;
 }
 
-const FilteredSongElement = ({ song }: IProps) => {
+const FilteredSongElement = ({ song }: Props) => {
   return (
     <li className={styles.filteredSongElement}>
       <Link to={`/play/${song.index}`}>

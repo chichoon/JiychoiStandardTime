@@ -3,11 +3,11 @@ import cx from 'classnames';
 import { ErrorIcon } from 'assets/svgs';
 import styles from './error.module.scss';
 
-interface IProps {
+interface Props {
   message: string;
 }
 
-const Error = ({ message }: IProps) => {
+const Error = ({ message }: Props) => {
   return (
     <div className={styles.errorWrapper}>
       <div className={styles.errorComponentBox}>

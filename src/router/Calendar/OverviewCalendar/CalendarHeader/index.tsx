@@ -3,13 +3,13 @@ import { Dispatch, SetStateAction } from 'react';
 
 import styles from './calendarHeader.module.scss';
 
-interface IProps {
+interface Props {
   date: Dayjs;
   setDate: Dispatch<SetStateAction<Dayjs>>;
   setIsSelectMonthOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-const CalendarHeader = ({ date, setDate, setIsSelectMonthOpen }: IProps) => {
+const CalendarHeader = ({ date, setDate, setIsSelectMonthOpen }: Props) => {
   const handleOpenMonthChange = () => {
     setIsSelectMonthOpen((prevState) => !prevState);
   };

@@ -12,11 +12,11 @@ import TagBox from './TagBox';
 
 import styles from './playerComponent.module.scss';
 
-interface IProps {
+interface Props {
   song: SongType;
 }
 
-const PlayerComponent = ({ song }: IProps) => {
+const PlayerComponent = ({ song }: Props) => {
   const titleRef = useRef(null);
   const isHovering = useHoverDirty(titleRef);
   const dispatch = useDispatch();
