@@ -10,25 +10,25 @@ interface Props {
 }
 
 const CalendarHeader = ({ date, setDate, setIsSelectMonthOpen }: Props) => {
-  const handleOpenMonthChange = () => {
+  function handleOpenMonthChange() {
     setIsSelectMonthOpen((prevState) => !prevState);
-  };
+  }
 
-  const handleYearBeforeButtonClick = () => {
+  function handleYearBeforeButtonClick() {
     setDate((prevState) => prevState.add(-1, 'year'));
-  };
+  }
 
-  const handleYearAfterButtonClick = () => {
+  function handleYearAfterButtonClick() {
     setDate((prevState) => prevState.add(1, 'year'));
-  };
+  }
 
-  const handleMonthBeforeButtonClick = () => {
+  function handleMonthBeforeButtonClick() {
     setDate((prevState) => prevState.add(-1, 'month'));
-  };
+  }
 
-  const handleMonthAfterButtonClick = () => {
+  function handleMonthAfterButtonClick() {
     setDate((prevState) => prevState.add(1, 'month'));
-  };
+  }
 
   return (
     <div className={styles.calendarHeaderWrapper}>

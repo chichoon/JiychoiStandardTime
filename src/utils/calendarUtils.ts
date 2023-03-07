@@ -7,7 +7,7 @@ interface IMonthArray {
   numOfDate: number;
 }
 
-export const getMonthArray = (date: Dayjs) => {
+export function getMonthArray(date: Dayjs) {
   const lastMonth = date.add(-1, 'month');
   const nextMonth = date.add(1, 'month');
   const lastMonthLastDay = lastMonth.daysInMonth();
@@ -27,4 +27,4 @@ export const getMonthArray = (date: Dayjs) => {
   monthArray.numOfDate =
     monthArray.lastMonthArr.length + monthArray.thisMonthArr.length + monthArray.nextMonthArr.length;
   return monthArray;
-};
+}

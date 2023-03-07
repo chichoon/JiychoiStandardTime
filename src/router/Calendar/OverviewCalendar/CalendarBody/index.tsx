@@ -17,9 +17,9 @@ const CalendarBody = ({ date }: Props) => {
   const monthArray = getMonthArray(date);
   const allSongsByDay = useFetchMonthlySongsByDay(month, year);
 
-  const getSongOfDay = (v: Dayjs): SongType => {
+  function getSongOfDay(v: Dayjs): SongType {
     return allSongsByDay[v.format('YYYY-MM-DD')];
-  };
+  }
 
   return (
     <ul className={styles.calendarBodyWrapper} style={{ gridTemplateRows: `repeat(${monthArray.numOfDate / 7}, 1fr)` }}>

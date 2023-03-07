@@ -21,13 +21,13 @@ const PlayerComponent = ({ song }: Props) => {
   const isHovering = useHoverDirty(titleRef);
   const dispatch = useDispatch();
 
-  const handlePlaySong = () => {
+  function handlePlaySong() {
     dispatch(setOnPlay());
-  };
+  }
 
-  const handlePauseSong = () => {
+  function handlePauseSong() {
     dispatch(setOnPause());
-  };
+  }
 
   useUnmount(() => {
     dispatch(setOnPause());

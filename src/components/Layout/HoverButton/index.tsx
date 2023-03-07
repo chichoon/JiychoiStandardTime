@@ -17,9 +17,9 @@ const HoverButton = () => {
     'theme-sunset': <MoonIcon />,
   }[colorTheme] || <SunIcon />;
 
-  const handleThemeButtonClick = () => {
+  function handleThemeButtonClick() {
     dispatch(toggleTheme());
-  };
+  }
 
   return (
     <button type='button' className={styles.hoverButton} onClick={handleThemeButtonClick}>

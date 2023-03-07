@@ -15,7 +15,9 @@ const NavSection = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const isPlayPage = location.pathname.startsWith('/play');
-  const handleButtonClick = () => navigate(-1);
+  function handleButtonClick() {
+    navigate(-1);
+  }
 
   return (
     <nav className={cx(styles.layoutNavBar, { [styles.isPlayPage]: isPlayPage })}>

@@ -17,7 +17,10 @@ const PlayInner = ({ index }: Props) => {
 
 const Play = () => {
   const { index } = useParams();
-  const handleErrorFallback = () => <Error message='노래를 불러올 수 없어요' />;
+  function handleErrorFallback() {
+    return <Error message='노래를 불러올 수 없어요' />;
+  }
+
   return (
     <main className={cx('innerContainer')}>
       <ErrorBoundary FallbackComponent={handleErrorFallback}>

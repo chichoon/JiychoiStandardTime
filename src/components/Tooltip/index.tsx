@@ -1,6 +1,7 @@
 import cx from 'classnames';
 
 import { TriangleIcon } from 'assets/svgs';
+
 import styles from './tooltip.module.scss';
 
 interface Props {

@@ -4,7 +4,7 @@ import { useHoverDirty } from 'react-use';
 import { Outlet, useNavigate } from 'react-router-dom';
 
 import { getIsPlaying } from 'states/isPlaying';
-import { INIT_DATA } from 'utils/constants';
+import { useFetchAllSongs } from 'hooks';
 import NavSection from './NavSection';
 import HoverButton from './HoverButton';
 
@@ -15,21 +15,19 @@ const Layout = () => {
   const isPlaying = useSelector(getIsPlaying);
   const isHovering = useHoverDirty(imageRef);
   const navigate = useNavigate();
-  const lastSong = INIT_DATA; // TODO: 수정
+  const songList = useFetchAllSongs();
 
-  const playerImage = () => {
+  function playerImage() {
     if (isHovering) return '/images/question-image.png';
     if (isPlaying) return '/images/playing-image.gif';
     return '/images/main-image.gif';
-  };
+  }
 
-  const getRandomSong = () => {
-    return Math.floor(Math.random() * (lastSong.index + 1));
-  };
-
-  const handleRandomButtonClick = () => {
-    navigate(`/play/${getRandomSong()}`);
-  };
+  function handleRandomButtonClick() {
+    const randomValue = Math.floor(Math.random() * (songList.length ?? 0));
+    console.log(randomValue);
+    navigate(`/play/${randomValue}`);
+  }
 
   return (
     <div className={styles.layoutBackground}>
@@ -41,7 +39,7 @@ const Layout = () => {
         <div className={styles.layoutContainer}>
           <header>
             <h1 className={styles.layoutTitle}>#지최표준시</h1>
-            <p className={styles.layoutSubTitle}>jiychoi standard time</p>
+            <h2 className={styles.layoutSubTitle}>jiychoi standard time</h2>
             <NavSection />
           </header>
           <Outlet />

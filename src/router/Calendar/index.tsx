@@ -8,7 +8,9 @@ import OverviewCalendar from './OverviewCalendar';
 import styles from './calendar.module.scss';
 
 const Calendar = () => {
-  const handleErrorFallback = () => <Error message='달력을 불러올 수 없어요' />;
+  function handleErrorFallback() {
+    return <Error message='달력을 불러올 수 없어요' />;
+  }
 
   return (
     <main className={cx('innerContainer', styles.calendarWrapper)}>

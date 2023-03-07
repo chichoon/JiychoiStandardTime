@@ -8,7 +8,9 @@ import { INIT_DATA } from 'utils/constants';
 
 const Main = () => {
   const songList = useFetchAllSongs();
-  const handleErrorFallback = () => <Error message='노래를 불러올 수 없어요' />;
+  function handleErrorFallback() {
+    return <Error message='노래를 불러올 수 없어요' />;
+  }
 
   return (
     <main className={cx('innerContainer')}>
