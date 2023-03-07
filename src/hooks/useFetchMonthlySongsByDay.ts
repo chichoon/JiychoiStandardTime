@@ -1,8 +1,8 @@
 import { SongByDayType } from 'types/musics';
-import { useFetchAllSongs } from './useFetchAllSongs';
+import { useFetchMonthlySongs } from './useFetchMonthlySongs';
 
-export function useFetchAllSongsByDay() {
-  const songlist = useFetchAllSongs();
+export function useFetchMonthlySongsByDay(year: string, month: string) {
+  const songlist = useFetchMonthlySongs(year, month);
 
   return songlist.reduce((acc: SongByDayType, song) => {
     const key = song.date.split(' ')[0];

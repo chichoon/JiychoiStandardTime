@@ -1,6 +1,7 @@
 import { useQueries } from 'react-query';
 
 import { getMonthlySongs } from 'services';
+import { SongType } from 'types/musics';
 import { YEAR_LIST } from 'utils/constants';
 
 export function useFetchAllSongs() {
@@ -12,12 +13,9 @@ export function useFetchAllSongs() {
       staleTime: 1000 * 60 * 60 * 12,
       cacheTime: 1000 * 60 * 60 * 12,
       suspense: true,
-      useErrorBoundary: true,
       retry: false,
     }))
   );
 
-  console.log(res);
-
-  return res;
+  return res.reduce((acc: SongType[], { data = [] }) => [...acc, ...data], []);
 }
