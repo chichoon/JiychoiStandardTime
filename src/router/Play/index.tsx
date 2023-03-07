@@ -5,14 +5,15 @@ import cx from 'classnames';
 
 import { Error, Loading, PlayerComponent } from 'components';
 import { INIT_DATA } from 'utils/constants';
+import { useFetchAllSongs } from 'hooks';
 
 interface Props {
   index: number;
 }
 
 const PlayInner = ({ index }: Props) => {
-  const indexSong = INIT_DATA; // TODO: 수정
-  return <PlayerComponent song={indexSong} />;
+  const songList = useFetchAllSongs();
+  return <PlayerComponent song={songList[index] ?? INIT_DATA} />;
 };
 
 const Play = () => {
