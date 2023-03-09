@@ -10,7 +10,7 @@ interface Props {
   isShown: boolean;
 }
 
-const Tooltip = ({ tooltipString, position, isShown }: Props) => {
+export const Tooltip = ({ tooltipString, position, isShown }: Props) => {
   return (
     <div className={cx(styles.tooltipWrapper, styles[position], { [styles.isShown]: isShown })}>
       <TriangleIcon className={cx(styles.triangle)} />
@@ -18,5 +18,3 @@ const Tooltip = ({ tooltipString, position, isShown }: Props) => {
     </div>
   );
 };
-
-export default Tooltip;

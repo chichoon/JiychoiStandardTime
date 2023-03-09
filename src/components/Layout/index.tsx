@@ -2,15 +2,21 @@ import { useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useHoverDirty } from 'react-use';
 import { Outlet, useNavigate } from 'react-router-dom';
+import { ErrorBoundary } from 'react-error-boundary';
 
-import { getIsPlaying } from 'states/isPlaying';
+import { Error } from 'components';
 import { useFetchAllSongs } from 'hooks';
+import { getIsPlaying } from 'states/isPlaying';
 import NavSection from './NavSection';
 import HoverButton from './HoverButton';
 
 import styles from './layout.module.scss';
 
-const Layout = () => {
+const FallbackComponent = ({ e }: { e: Error }) => {
+  return <Error message={e.message} />;
+};
+
+export const Layout = () => {
   const imageRef = useRef(null);
   const isPlaying = useSelector(getIsPlaying);
   const isHovering = useHoverDirty(imageRef);
@@ -25,7 +31,6 @@ const Layout = () => {
 
   function handleRandomButtonClick() {
     const randomValue = Math.floor(Math.random() * (songList.length ?? 0));
-    console.log(randomValue);
     navigate(`/play/${randomValue}`);
   }
 
@@ -42,11 +47,11 @@ const Layout = () => {
             <h2 className={styles.layoutSubTitle}>jiychoi standard time</h2>
             <NavSection />
           </header>
-          <Outlet />
+          <ErrorBoundary FallbackComponent={FallbackComponent}>
+            <Outlet />
+          </ErrorBoundary>
         </div>
       </div>
     </div>
   );
 };
-
-export default Layout;

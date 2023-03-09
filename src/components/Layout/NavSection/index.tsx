@@ -2,16 +2,11 @@ import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import cx from 'classnames';
 
 import { LeftArrowIcon } from 'assets/svgs';
+import { NAVLINK_DATA } from 'utils/constants';
 
 import styles from './navSection.module.scss';
 
-const NAVLINK_DATA = [
-  { link: 'main', title: '오늘' },
-  { link: 'calendar', title: '달력' },
-  { link: 'mood', title: '기분' },
-];
-
-const NavSection = () => {
+export const NavSection = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const isPlayPage = location.pathname.startsWith('/play');

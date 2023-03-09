@@ -16,7 +16,7 @@ interface Props {
   song: SongType;
 }
 
-const PlayerComponent = ({ song }: Props) => {
+export const PlayerComponent = ({ song }: Props) => {
   const titleRef = useRef(null);
   const isHovering = useHoverDirty(titleRef);
   const dispatch = useDispatch();
@@ -63,5 +63,3 @@ const PlayerComponent = ({ song }: Props) => {
     </div>
   );
 };
-
-export default PlayerComponent;

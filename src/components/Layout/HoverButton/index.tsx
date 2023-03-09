@@ -6,7 +6,7 @@ import { MoonIcon, SunIcon } from 'assets/svgs';
 
 import styles from './hoverButton.module.scss';
 
-const HoverButton = () => {
+export const HoverButton = () => {
   const dispatch = useDispatch();
   const colorTheme = useSelector(getColorTheme);
 
@@ -27,5 +27,3 @@ const HoverButton = () => {
     </button>
   );
 };
-
-export default HoverButton;

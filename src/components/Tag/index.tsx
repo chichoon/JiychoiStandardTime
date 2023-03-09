@@ -10,7 +10,7 @@ interface Props {
   onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
-const Tag = ({ tagName, onClick }: Props) => {
+export const Tag = ({ tagName, onClick }: Props) => {
   const korTagName = KOR_TAG_NAME[tagName];
 
   return (
@@ -19,5 +19,3 @@ const Tag = ({ tagName, onClick }: Props) => {
     </button>
   );
 };
-
-export default Tag;
