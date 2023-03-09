@@ -54,3 +54,9 @@ export const KOR_TAG_NAME = {
   bass: '끝내주는 베이스',
   inst: '보컬이 없어요',
 } as const;
+
+export const NAVLINK_DATA = [
+  { link: 'main', title: '오늘' },
+  { link: 'calendar', title: '달력' },
+  { link: 'mood', title: '기분' },
+];
