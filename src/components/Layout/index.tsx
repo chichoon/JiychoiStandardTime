@@ -8,7 +8,7 @@ import { ErrorFallback } from 'components';
 import { useFetchAllSongs } from 'hooks';
 import { getIsPlaying } from 'states/isPlaying';
 import { NavSection } from './NavSection';
-import { HoverButton } from './HoverButton';
+import { FloatingButton } from './FloatingButton';
 
 import styles from './layout.module.scss';
 
@@ -32,7 +32,6 @@ export const Layout = () => {
 
   return (
     <div className={styles.layoutBackground}>
-      <HoverButton />
       <div className={styles.layoutWrapper}>
         <button type='button' onClick={handleRandomButtonClick}>
           <img ref={imageRef} src={playerImage()} alt='main-profile' />
@@ -48,6 +47,7 @@ export const Layout = () => {
           </ErrorBoundary>
         </div>
       </div>
+      <FloatingButton />
     </div>
   );
 };

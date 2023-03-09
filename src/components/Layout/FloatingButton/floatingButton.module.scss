@@ -2,11 +2,14 @@
 @use 'styles/constants/levels';
 @use 'styles/mixins/flexbox';
 
-.hoverButton {
-  position: absolute;
+.buttonWrapper {
+  position: fixed;
   right: 20px;
   bottom: 20px;
   z-index: levels.$HOVER_BUTTON;
+}
+
+.hoverButton {
   width: 70px;
   height: 70px;
   overflow: hidden;

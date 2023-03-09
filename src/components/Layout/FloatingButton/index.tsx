@@ -4,9 +4,9 @@ import cx from 'classnames';
 import { getColorTheme, toggleTheme } from 'states/colorTheme';
 import { MoonIcon, SunIcon } from 'assets/svgs';
 
-import styles from './hoverButton.module.scss';
+import styles from './floatingButton.module.scss';
 
-export const HoverButton = () => {
+export const FloatingButton = () => {
   const dispatch = useDispatch();
   const colorTheme = useSelector(getColorTheme);
 
@@ -22,8 +22,10 @@ export const HoverButton = () => {
   }
 
   return (
-    <button type='button' className={styles.hoverButton} onClick={handleThemeButtonClick}>
-      <div className={cx(styles.hoverButtonInner)}>{buttonIcon}</div>
-    </button>
+    <aside className={styles.buttonWrapper}>
+      <button type='button' className={styles.hoverButton} onClick={handleThemeButtonClick}>
+        <div className={cx(styles.hoverButtonInner)}>{buttonIcon}</div>
+      </button>
+    </aside>
   );
 };
