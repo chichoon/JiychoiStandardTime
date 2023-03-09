@@ -1,13 +1,14 @@
 import cx from 'classnames';
 
 import { ErrorIcon } from 'assets/svgs';
-import styles from './error.module.scss';
+
+import styles from './errorFallback.module.scss';
 
 interface Props {
   message: string;
 }
 
-const Error = ({ message }: Props) => {
+export const ErrorFallback = ({ message }: Props) => {
   return (
     <div className={styles.errorWrapper}>
       <div className={styles.errorComponentBox}>
@@ -24,5 +25,3 @@ const Error = ({ message }: Props) => {
     </div>
   );
 };
-
-export default Error;
