@@ -13,7 +13,7 @@ interface Props {
 
 const CalendarBody = ({ date }: Props) => {
   const year = date.year().toString().padStart(2, '0');
-  const month = date.month().toString().padStart(2, '0');
+  const month = (date.month() + 1).toString().padStart(2, '0');
   const monthArray = getMonthArray(date);
   const allSongsByDay = useFetchMonthlySongsByDay(month, year);
 
