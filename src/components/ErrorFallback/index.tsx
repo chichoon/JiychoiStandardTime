@@ -1,14 +1,12 @@
+import { FallbackProps } from 'react-error-boundary';
 import cx from 'classnames';
 
 import { ErrorIcon } from 'assets/svgs';
 
 import styles from './errorFallback.module.scss';
 
-interface Props {
-  message: string;
-}
-
-export const ErrorFallback = ({ message }: Props) => {
+export const ErrorFallback = ({ error }: FallbackProps) => {
+  const { message } = error;
   return (
     <div className={styles.errorWrapper}>
       <div className={styles.errorComponentBox}>

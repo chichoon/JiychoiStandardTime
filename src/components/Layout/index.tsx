@@ -4,17 +4,13 @@ import { useHoverDirty } from 'react-use';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
 
-import { Error } from 'components';
+import { ErrorFallback } from 'components';
 import { useFetchAllSongs } from 'hooks';
 import { getIsPlaying } from 'states/isPlaying';
-import NavSection from './NavSection';
-import HoverButton from './HoverButton';
+import { NavSection } from './NavSection';
+import { HoverButton } from './HoverButton';
 
 import styles from './layout.module.scss';
-
-const FallbackComponent = ({ e }: { e: Error }) => {
-  return <Error message={e.message} />;
-};
 
 export const Layout = () => {
   const imageRef = useRef(null);
@@ -47,7 +43,7 @@ export const Layout = () => {
             <h2 className={styles.layoutSubTitle}>jiychoi standard time</h2>
             <NavSection />
           </header>
-          <ErrorBoundary FallbackComponent={FallbackComponent}>
+          <ErrorBoundary FallbackComponent={ErrorFallback}>
             <Outlet />
           </ErrorBoundary>
         </div>
