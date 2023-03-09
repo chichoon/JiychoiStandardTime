@@ -20,4 +20,11 @@
     width: 150px;
     min-width: 120px;
   }
+
+  .calendarHeaderButtonUnavailable {
+    opacity: 0.5;
+    &:hover {
+      cursor: initial;
+    }
+  }
 }
