@@ -5,10 +5,10 @@ import store from 'store';
 
 import { Layout } from 'components';
 import { setTheme } from 'states/colorTheme';
-import Main from './Main';
-import Mood from './Mood';
-import Play from './Play';
-import Calendar from './Calendar';
+import { Main } from './Main';
+import { Mood } from './Mood';
+import { Play } from './Play';
+import { Calendar } from './Calendar';
 
 const Router = () => {
   const dispatch = useDispatch();

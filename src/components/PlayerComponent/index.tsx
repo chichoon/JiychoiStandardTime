@@ -5,7 +5,7 @@ import ReactPlayer from 'react-player/lazy';
 import dayjs from 'dayjs';
 import cx from 'classnames';
 
-import Tooltip from 'components/Tooltip';
+import { Tooltip } from 'components';
 import { setOnPause, setOnPlay } from 'states/isPlaying';
 import { SongType } from 'types/musics';
 import TagBox from './TagBox';
