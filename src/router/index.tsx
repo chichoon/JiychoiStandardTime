@@ -4,12 +4,11 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import store from 'store';
 
 import { Layout } from 'components';
-import Main from './Main';
-import Mood from './Mood';
-import Play from './Play';
-import Calendar from './Calendar';
-
 import { setTheme } from 'states/colorTheme';
+import { Main } from './Main';
+import { Mood } from './Mood';
+import { Play } from './Play';
+import { Calendar } from './Calendar';
 
 const Router = () => {
   const dispatch = useDispatch();
@@ -33,7 +32,5 @@ const Router = () => {
     </Routes>
   );
 };
-
-// TODO: 나만의 재생목록
 
 export default Router;

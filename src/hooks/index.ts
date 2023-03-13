@@ -1,6 +1,5 @@
-import useFetchLatestSong from './useFetchLatestSong';
-import useFetchFilteredSongs from './useFetchFilteredSongs';
-import useFetchSongByIndex from './useFetchSongByIndex';
-import useFetchAllSongsByDay from './useFetchAllSongsByDay';
-
-export { useFetchLatestSong, useFetchFilteredSongs, useFetchSongByIndex, useFetchAllSongsByDay };
+export { useFetchMonthlySongs } from './useFetchMonthlySongs';
+export { useFetchMonthlySongsByDay } from './useFetchMonthlySongsByDay';
+export { useFetchAllSongs } from './useFetchAllSongs';
+export { useFetchAllSongsByDay } from './useFetchAllSongsByDay';
+export { useFetchFilteredSongs } from './useFetchFilteredSongs';

@@ -4,19 +4,19 @@ import cx from 'classnames';
 
 import styles from './calendarSelectMonth.module.scss';
 
-interface IProps {
+interface Props {
   date: Dayjs;
   setDate: Dispatch<SetStateAction<Dayjs>>;
   setIsSelectMonthOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-const CalendarSelectMonth = ({ date, setDate, setIsSelectMonthOpen }: IProps) => {
+const CalendarSelectMonth = ({ date, setDate, setIsSelectMonthOpen }: Props) => {
   const monthList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-  const handleSelectMonthButtonClick = (month: number) => {
+  function handleSelectMonthButtonClick(month: number) {
     setDate((prevState) => prevState.month(month - 1));
     setIsSelectMonthOpen(false);
-  };
+  }
 
   return (
     <div className={styles.selectMonthWrapper}>

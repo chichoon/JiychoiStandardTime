@@ -1,13 +1,12 @@
+import { FallbackProps } from 'react-error-boundary';
 import cx from 'classnames';
 
 import { ErrorIcon } from 'assets/svgs';
-import styles from './error.module.scss';
 
-interface IProps {
-  message: string;
-}
+import styles from './errorFallback.module.scss';
 
-const Error = ({ message }: IProps) => {
+export const ErrorFallback = ({ error }: FallbackProps) => {
+  const { message } = error;
   return (
     <div className={styles.errorWrapper}>
       <div className={styles.errorComponentBox}>
@@ -24,5 +23,3 @@ const Error = ({ message }: IProps) => {
     </div>
   );
 };
-
-export default Error;

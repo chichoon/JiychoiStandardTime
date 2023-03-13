@@ -1,15 +1,16 @@
 import cx from 'classnames';
 
 import { TriangleIcon } from 'assets/svgs';
+
 import styles from './tooltip.module.scss';
 
-interface IProps {
+interface Props {
   tooltipString: string;
   position: 'bottomLeft' | 'topMiddle';
   isShown: boolean;
 }
 
-const Tooltip = ({ tooltipString, position, isShown }: IProps) => {
+export const Tooltip = ({ tooltipString, position, isShown }: Props) => {
   return (
     <div className={cx(styles.tooltipWrapper, styles[position], { [styles.isShown]: isShown })}>
       <TriangleIcon className={cx(styles.triangle)} />
@@ -17,5 +18,3 @@ const Tooltip = ({ tooltipString, position, isShown }: IProps) => {
     </div>
   );
 };
-
-export default Tooltip;

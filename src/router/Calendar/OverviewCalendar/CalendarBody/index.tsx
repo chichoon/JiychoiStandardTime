@@ -1,23 +1,25 @@
 import { Dayjs } from 'dayjs';
 
-import CalendarDateElement from './CalendarDateElement';
-import { useFetchAllSongsByDay } from 'hooks';
-import { ISong } from 'types/musics';
+import { useFetchMonthlySongsByDay } from 'hooks';
+import { SongType } from 'types/musics';
 import { getMonthArray } from 'utils/calendarUtils';
+import CalendarDateElement from './CalendarDateElement';
 
 import styles from './calendarBody.module.scss';
 
-interface IProps {
+interface Props {
   date: Dayjs;
 }
 
-const CalendarBody = ({ date }: IProps) => {
+const CalendarBody = ({ date }: Props) => {
+  const year = date.year().toString().padStart(2, '0');
+  const month = (date.month() + 1).toString().padStart(2, '0');
   const monthArray = getMonthArray(date);
-  const allSongsByDay = useFetchAllSongsByDay();
+  const allSongsByDay = useFetchMonthlySongsByDay(month, year);
 
-  const getSongOfDay = (v: Dayjs): ISong | undefined => {
-    return allSongsByDay[v.format('YYYY-MM-DD')] ?? undefined;
-  };
+  function getSongOfDay(v: Dayjs): SongType {
+    return allSongsByDay[v.format('YYYY-MM-DD')];
+  }
 
   return (
     <ul className={styles.calendarBodyWrapper} style={{ gridTemplateRows: `repeat(${monthArray.numOfDate / 7}, 1fr)` }}>

@@ -2,38 +2,36 @@ import { useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useHoverDirty } from 'react-use';
 import { Outlet, useNavigate } from 'react-router-dom';
+import { ErrorBoundary } from 'react-error-boundary';
 
-import { useFetchLatestSong } from 'hooks';
+import { ErrorFallback } from 'components';
+import { useFetchAllSongs } from 'hooks';
 import { getIsPlaying } from 'states/isPlaying';
-import NavSection from './NavSection';
-import HoverButton from './HoverButton';
+import { NavSection } from './NavSection';
+import { FloatingButton } from './FloatingButton';
 
 import styles from './layout.module.scss';
 
-const Layout = () => {
+export const Layout = () => {
   const imageRef = useRef(null);
   const isPlaying = useSelector(getIsPlaying);
   const isHovering = useHoverDirty(imageRef);
   const navigate = useNavigate();
-  const lastSong = useFetchLatestSong();
+  const songList = useFetchAllSongs();
 
-  const playerImage = () => {
+  function playerImage() {
     if (isHovering) return '/images/question-image.png';
     if (isPlaying) return '/images/playing-image.gif';
     return '/images/main-image.gif';
-  };
+  }
 
-  const getRandomSong = () => {
-    return Math.floor(Math.random() * (lastSong.index + 1));
-  };
-
-  const handleRandomButtonClick = () => {
-    navigate(`/play/${getRandomSong()}`);
-  };
+  function handleRandomButtonClick() {
+    const randomValue = Math.floor(Math.random() * (songList.length ?? 0));
+    navigate(`/play/${randomValue}`);
+  }
 
   return (
     <div className={styles.layoutBackground}>
-      <HoverButton />
       <div className={styles.layoutWrapper}>
         <button type='button' onClick={handleRandomButtonClick}>
           <img ref={imageRef} src={playerImage()} alt='main-profile' />
@@ -41,14 +39,15 @@ const Layout = () => {
         <div className={styles.layoutContainer}>
           <header>
             <h1 className={styles.layoutTitle}>#지최표준시</h1>
-            <p className={styles.layoutSubTitle}>jiychoi standard time</p>
+            <h2 className={styles.layoutSubTitle}>jiychoi standard time</h2>
             <NavSection />
           </header>
-          <Outlet />
+          <ErrorBoundary FallbackComponent={ErrorFallback}>
+            <Outlet />
+          </ErrorBoundary>
         </div>
       </div>
+      <FloatingButton />
     </div>
   );
 };
-
-export default Layout;

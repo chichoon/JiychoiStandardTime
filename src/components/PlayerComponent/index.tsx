@@ -5,29 +5,29 @@ import ReactPlayer from 'react-player/lazy';
 import dayjs from 'dayjs';
 import cx from 'classnames';
 
-import Tooltip from 'components/Tooltip';
+import { Tooltip } from 'components';
 import { setOnPause, setOnPlay } from 'states/isPlaying';
-import { ISong } from 'types/musics';
+import { SongType } from 'types/musics';
 import TagBox from './TagBox';
 
 import styles from './playerComponent.module.scss';
 
-interface IProps {
-  song: ISong;
+interface Props {
+  song: SongType;
 }
 
-const PlayerComponent = ({ song }: IProps) => {
+export const PlayerComponent = ({ song }: Props) => {
   const titleRef = useRef(null);
   const isHovering = useHoverDirty(titleRef);
   const dispatch = useDispatch();
 
-  const handlePlaySong = () => {
+  function handlePlaySong() {
     dispatch(setOnPlay());
-  };
+  }
 
-  const handlePauseSong = () => {
+  function handlePauseSong() {
     dispatch(setOnPause());
-  };
+  }
 
   useUnmount(() => {
     dispatch(setOnPause());
@@ -63,5 +63,3 @@ const PlayerComponent = ({ song }: IProps) => {
     </div>
   );
 };
-
-export default PlayerComponent;

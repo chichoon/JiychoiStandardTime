@@ -5,7 +5,6 @@
 
 .layoutBackground {
   @include flexbox.flexbox(center, top);
-  position: relative;
   width: 100vw;
   height: 100vh;
   padding: 20px 0;

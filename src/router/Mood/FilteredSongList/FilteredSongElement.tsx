@@ -1,15 +1,15 @@
 import cx from 'classnames';
 import { Link } from 'react-router-dom';
 
-import { ISong } from 'types/musics';
+import { SongType } from 'types/musics';
 
 import styles from './filteredSongList.module.scss';
 
-interface IProps {
-  song: ISong;
+interface Props {
+  song: SongType;
 }
 
-const FilteredSongElement = ({ song }: IProps) => {
+const FilteredSongElement = ({ song }: Props) => {
   return (
     <li className={styles.filteredSongElement}>
       <Link to={`/play/${song.index}`}>

@@ -1,26 +1,15 @@
-import { Suspense } from 'react';
-import { ErrorBoundary } from 'react-error-boundary';
 import cx from 'classnames';
 
-import { Error, Loading, PlayerComponent } from 'components';
-import { useFetchLatestSong } from 'hooks';
+import { PlayerComponent } from 'components';
+import { useFetchAllSongs } from 'hooks';
+import { INIT_DATA } from 'utils/constants';
 
-const MainInner = () => {
-  const todaySong = useFetchLatestSong();
-  return <PlayerComponent song={todaySong} />;
-};
+export const Main = () => {
+  const songList = useFetchAllSongs();
 
-const Main = () => {
-  const handleErrorFallback = () => <Error message='노래를 불러올 수 없어요' />;
   return (
     <main className={cx('innerContainer')}>
-      <ErrorBoundary FallbackComponent={handleErrorFallback}>
-        <Suspense fallback={<Loading />}>
-          <MainInner />
-        </Suspense>
-      </ErrorBoundary>
+      <PlayerComponent song={songList[songList.length - 1] ?? INIT_DATA} />
     </main>
   );
 };
-
-export default Main;

@@ -1,18 +1,10 @@
 import { useSelector } from 'react-redux';
-import { useQuery } from 'react-query';
-
-import { getSongsListFiltered } from 'services';
 import { getSelectedTags } from 'states/selectedTagInfo';
+import { useFetchAllSongs } from './useFetchAllSongs';
 
-const useFetchFilteredSongs = () => {
-  const selectedTags = useSelector(getSelectedTags);
-  const { data } = useQuery(['filteredSong', ...selectedTags], () => getSongsListFiltered(selectedTags), {
-    refetchOnWindowFocus: false,
-    useErrorBoundary: true,
-    suspense: true,
-  });
+export function useFetchFilteredSongs() {
+  const songList = useFetchAllSongs();
+  const tagList = useSelector(getSelectedTags);
 
-  return data;
-};
-
-export default useFetchFilteredSongs;
+  return songList.filter((song) => tagList.every((tag) => song.tagList.includes(tag)));
+}

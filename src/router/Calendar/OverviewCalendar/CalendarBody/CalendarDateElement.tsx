@@ -4,20 +4,20 @@ import { useHoverDirty } from 'react-use';
 import dayjs, { Dayjs } from 'dayjs';
 import cx from 'classnames';
 
-import { ISong } from 'types/musics';
+import { SongType } from 'types/musics';
 import { Tooltip } from 'components';
 
 import styles from './calendarBody.module.scss';
 
-interface IProps {
+interface Props {
   date: Dayjs;
-  songOfTheDay?: ISong;
+  songOfTheDay?: SongType;
   ifOtherMonth?: boolean;
 }
 
 const today = dayjs();
 
-const CalendarDateElement = ({ date, songOfTheDay, ifOtherMonth }: IProps) => {
+const CalendarDateElement = ({ date, songOfTheDay, ifOtherMonth }: Props) => {
   const buttonRef = useRef(null);
   const isHovering = useHoverDirty(buttonRef);
   const tooltipString = songOfTheDay ? `${songOfTheDay.date}\n${songOfTheDay.title}` : '';

@@ -1,52 +1,64 @@
-import dayjs, { Dayjs } from 'dayjs';
 import { Dispatch, SetStateAction } from 'react';
+import dayjs, { Dayjs } from 'dayjs';
+
+import { MAXIMUM_DATE, MINIMUM_DATE } from 'utils/constants';
+import { CalendarHeaderButton } from './CalendarHeaderButton';
 
 import styles from './calendarHeader.module.scss';
 
-interface IProps {
+interface Props {
   date: Dayjs;
   setDate: Dispatch<SetStateAction<Dayjs>>;
   setIsSelectMonthOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-const CalendarHeader = ({ date, setDate, setIsSelectMonthOpen }: IProps) => {
-  const handleOpenMonthChange = () => {
+const CalendarHeader = ({ date, setDate, setIsSelectMonthOpen }: Props) => {
+  const isYearBeforeButtonUnavailable = date.add(-1, 'year').isBefore(dayjs(MINIMUM_DATE));
+  const isYearAfterButtonUnavailable = date.add(1, 'year').isAfter(dayjs(MAXIMUM_DATE));
+  const isMonthBeforeButtonUnavailable = date.add(-1, 'month').isBefore(dayjs(MINIMUM_DATE));
+  const isMonthAfterButtonUnavailable = date.add(1, 'month').isAfter(dayjs(MAXIMUM_DATE));
+
+  function handleOpenMonthChange() {
     setIsSelectMonthOpen((prevState) => !prevState);
-  };
+  }
 
-  const handleYearBeforeButtonClick = () => {
+  function handleYearBeforeButtonClick() {
+    if (isYearBeforeButtonUnavailable) return;
     setDate((prevState) => prevState.add(-1, 'year'));
-  };
+  }
 
-  const handleYearAfterButtonClick = () => {
+  function handleYearAfterButtonClick() {
+    if (isYearAfterButtonUnavailable) return;
     setDate((prevState) => prevState.add(1, 'year'));
-  };
+  }
 
-  const handleMonthBeforeButtonClick = () => {
+  function handleMonthBeforeButtonClick() {
+    if (isMonthBeforeButtonUnavailable) return;
     setDate((prevState) => prevState.add(-1, 'month'));
-  };
+  }
 
-  const handleMonthAfterButtonClick = () => {
+  function handleMonthAfterButtonClick() {
+    if (isMonthAfterButtonUnavailable) return;
     setDate((prevState) => prevState.add(1, 'month'));
-  };
+  }
 
   return (
     <div className={styles.calendarHeaderWrapper}>
-      <button className={styles.calendarHeaderButton} type='button' onClick={handleYearBeforeButtonClick}>
+      <CalendarHeaderButton isUnavailable={isYearBeforeButtonUnavailable} onClick={handleYearBeforeButtonClick}>
         {'<<'}
-      </button>
-      <button className={styles.calendarHeaderButton} type='button' onClick={handleMonthBeforeButtonClick}>
+      </CalendarHeaderButton>
+      <CalendarHeaderButton isUnavailable={isMonthBeforeButtonUnavailable} onClick={handleMonthBeforeButtonClick}>
         {'<'}
-      </button>
+      </CalendarHeaderButton>
       <button className={styles.calendarHeaderTitleButton} type='button' onClick={handleOpenMonthChange}>
         {dayjs(date).format('MMMM YYYY')}
       </button>
-      <button className={styles.calendarHeaderButton} type='button' onClick={handleMonthAfterButtonClick}>
+      <CalendarHeaderButton isUnavailable={isMonthAfterButtonUnavailable} onClick={handleMonthAfterButtonClick}>
         {'>'}
-      </button>
-      <button className={styles.calendarHeaderButton} type='button' onClick={handleYearAfterButtonClick}>
+      </CalendarHeaderButton>
+      <CalendarHeaderButton isUnavailable={isYearAfterButtonUnavailable} onClick={handleYearAfterButtonClick}>
         {'>>'}
-      </button>
+      </CalendarHeaderButton>
     </div>
   );
 };

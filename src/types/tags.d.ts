@@ -1,4 +1,4 @@
-export interface ITagInfo {
+export interface TagListType {
   selectableTags: TagType[];
   selectedTags: TagType[];
 }

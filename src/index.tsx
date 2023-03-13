@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import { ReactQueryDevtools } from 'react-query/devtools';
 
 import Router from 'router';
 import { store } from 'states';
-import reportWebVitals from './reportWebVitals';
 
 import 'styles/index.scss';
 import 'styles/global.scss';
@@ -33,5 +32,3 @@ root.render(
     </BrowserRouter>
   </React.StrictMode>
 );
-
-reportWebVitals();

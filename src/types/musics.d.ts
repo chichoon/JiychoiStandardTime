@@ -1,10 +1,10 @@
 import { TagType } from 'types/tags';
 
-export interface ISongsList {
-  songs: ISong[];
+export interface SongListType {
+  songs: SongType[];
 }
 
-export interface ISong {
+export interface SongType {
   index: number;
   title: string;
   artist: string;
@@ -15,6 +15,6 @@ export interface ISong {
   tagList: TagType[];
 }
 
-export interface ISongsByDay {
-  [key: string]: ISong;
+export interface SongByDayType {
+  [key: string]: SongType;
 }

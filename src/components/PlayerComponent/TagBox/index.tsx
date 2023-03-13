@@ -3,11 +3,11 @@ import { TagType } from 'types/tags';
 
 import styles from './tagBox.module.scss';
 
-interface IProps {
+interface Props {
   tagList: TagType[];
 }
 
-const TagBox = ({ tagList }: IProps) => {
+const TagBox = ({ tagList }: Props) => {
   return (
     <ul className={styles.tagBoxWrapper}>
       {tagList.map((tag) => (

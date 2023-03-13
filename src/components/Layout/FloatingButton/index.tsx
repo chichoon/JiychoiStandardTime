@@ -2,11 +2,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import cx from 'classnames';
 
 import { getColorTheme, toggleTheme } from 'states/colorTheme';
-
-import styles from './hoverButton.module.scss';
 import { MoonIcon, SunIcon } from 'assets/svgs';
 
-const HoverButton = () => {
+import styles from './floatingButton.module.scss';
+
+export const FloatingButton = () => {
   const dispatch = useDispatch();
   const colorTheme = useSelector(getColorTheme);
 
@@ -17,15 +17,15 @@ const HoverButton = () => {
     'theme-sunset': <MoonIcon />,
   }[colorTheme] || <SunIcon />;
 
-  const handleThemeButtonClick = () => {
+  function handleThemeButtonClick() {
     dispatch(toggleTheme());
-  };
+  }
 
   return (
-    <button type='button' className={styles.hoverButton} onClick={handleThemeButtonClick}>
-      <div className={cx(styles.hoverButtonInner)}>{buttonIcon}</div>
-    </button>
+    <aside className={styles.buttonWrapper}>
+      <button type='button' className={styles.hoverButton} onClick={handleThemeButtonClick}>
+        <div className={cx(styles.hoverButtonInner)}>{buttonIcon}</div>
+      </button>
+    </aside>
   );
 };
-
-export default HoverButton;

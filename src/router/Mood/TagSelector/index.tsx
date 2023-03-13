@@ -11,9 +11,13 @@ const TagSelector = () => {
   const selectedTags = useSelector(getSelectedTags);
   const dispatch = useDispatch();
 
-  const handleTagClick = (tagName: TagType) => dispatch(selectTag(tagName));
+  function handleTagClick(tagName: TagType) {
+    dispatch(selectTag(tagName));
+  }
 
-  const handleSelectedTagClick = (tagName: TagType) => dispatch(deselectTag(tagName));
+  function handleSelectedTagClick(tagName: TagType) {
+    dispatch(deselectTag(tagName));
+  }
 
   return (
     <div className={styles.tagSelectorWrapper}>
