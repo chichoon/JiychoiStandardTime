@@ -2,7 +2,7 @@ import { Dayjs } from 'dayjs';
 
 import { useFetchMonthlySongsByDay } from 'hooks';
 import { SongType } from 'types/musics';
-import { getDateArray } from 'utils/calendarUtils';
+import { getDateArray } from './getDateArray';
 import CalendarDateElement from './CalendarDateElement';
 
 import styles from './calendarBody.module.scss';
