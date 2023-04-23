@@ -1,9 +1,8 @@
 import { Dayjs } from 'dayjs';
 
-function getLastMonthDateArray(today: Dayjs) {
+function getLastMonthDateArray(today: Dayjs, firstDay: number) {
   const lastMonthArr = [];
   const lastMonth = today.add(-1, 'month');
-  const firstDay = today.startOf('month').day();
   const lastMonthLastDay = lastMonth.daysInMonth();
 
   for (let i = firstDay - 1; i >= 0; i -= 1) {
@@ -12,9 +11,8 @@ function getLastMonthDateArray(today: Dayjs) {
   return lastMonthArr;
 }
 
-function getThisMonthDateArray(today: Dayjs) {
+function getThisMonthDateArray(today: Dayjs, thisMonthLastDay: number) {
   const thisMonthArr = [];
-  const thisMonthLastDay = today.daysInMonth();
 
   for (let i = 1; i <= thisMonthLastDay; i += 1) {
     thisMonthArr.push(today.date(i));
@@ -22,11 +20,9 @@ function getThisMonthDateArray(today: Dayjs) {
   return thisMonthArr;
 }
 
-function getNextMonthDateArray(today: Dayjs) {
+function getNextMonthDateArray(today: Dayjs, firstDay: number, thisMonthLastDay: number) {
   const nextMonthArr = [];
   const nextMonth = today.add(1, 'month');
-  const firstDay = today.startOf('month').day();
-  const thisMonthLastDay = today.daysInMonth();
   const nextMonthDay = 7 - ((firstDay + thisMonthLastDay) % 7);
 
   if (nextMonthDay !== 7) {
@@ -39,9 +35,11 @@ function getNextMonthDateArray(today: Dayjs) {
 }
 
 export function getDateArray(today: Dayjs) {
-  const lastMonthArr = getLastMonthDateArray(today);
-  const thisMonthArr = getThisMonthDateArray(today);
-  const nextMonthArr = getNextMonthDateArray(today);
+  const firstDay = today.startOf('month').day();
+  const thisMonthLastDay = today.daysInMonth();
+  const lastMonthArr = getLastMonthDateArray(today, firstDay);
+  const thisMonthArr = getThisMonthDateArray(today, thisMonthLastDay);
+  const nextMonthArr = getNextMonthDateArray(today, firstDay, thisMonthLastDay);
 
   const numOfDate = lastMonthArr.length + thisMonthArr.length + nextMonthArr.length;
   return { lastMonthArr, thisMonthArr, nextMonthArr, numOfDate };
