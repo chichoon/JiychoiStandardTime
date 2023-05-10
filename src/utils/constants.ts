@@ -24,7 +24,7 @@ export const YEAR_LIST = [
 ] as const;
 
 export const MINIMUM_DATE = '2021-08-01';
-export const MAXIMUM_DATE = '2023-06-30';
+export const MAXIMUM_DATE = '2023-04-14';
 
 export const INIT_DATA: SongType = {
   index: -1,
