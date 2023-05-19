@@ -1,10 +1,10 @@
-import { useRef } from 'react';
+import { Suspense, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useHoverDirty } from 'react-use';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
 
-import { ErrorFallback } from 'components';
+import { ErrorFallback, LoadingFallback } from 'components';
 import { useFetchAllSongs } from 'hooks';
 import { getIsPlaying } from 'states/isPlaying';
 import { NavSection } from './NavSection';
@@ -42,9 +42,11 @@ export const Layout = () => {
             <h2 className={styles.layoutSubTitle}>jiychoi standard time</h2>
             <NavSection />
           </header>
-          <ErrorBoundary FallbackComponent={ErrorFallback}>
-            <Outlet />
-          </ErrorBoundary>
+          <Suspense fallback={<LoadingFallback />}>
+            <ErrorBoundary FallbackComponent={ErrorFallback}>
+              <Outlet />
+            </ErrorBoundary>
+          </Suspense>
         </div>
       </div>
       <FloatingButton />

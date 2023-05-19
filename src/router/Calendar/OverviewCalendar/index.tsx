@@ -1,17 +1,19 @@
 import { useState } from 'react';
-import dayjs from 'dayjs';
+import { Dayjs } from 'dayjs';
 
-import { MAXIMUM_DATE } from 'utils/constants';
 import CalendarHeader from './CalendarHeader';
 import CalendarSelectMonth from './CalendarSelectMonth';
 import CalendarBody from './CalendarBody';
 
 import styles from './overviewCalendar.module.scss';
 
-const today = dayjs();
+interface Props {
+  today: Dayjs;
+  maxDate: Dayjs;
+}
 
-const OverviewCalendar = () => {
-  const [date, setDate] = useState(today.isAfter(dayjs(MAXIMUM_DATE)) ? dayjs(MAXIMUM_DATE) : today);
+const OverviewCalendar = ({ today, maxDate }: Props) => {
+  const [date, setDate] = useState(today.isAfter(maxDate) ? maxDate : today);
   const [isSelectMonthOpen, setIsSelectMonthOpen] = useState(false);
 
   return (
