@@ -1,14 +1,17 @@
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import cx from 'classnames';
 
-import { LeftArrowIcon } from 'assets/svgs';
+import { useFetchAllSongs } from 'hooks';
 import { NAVLINK_DATA } from 'utils/constants';
 
+import { LeftArrowIcon } from 'assets/svgs';
 import styles from './navSection.module.scss';
 
 export const NavSection = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const songList = useFetchAllSongs();
+  const randomValue = Math.floor(Math.random() * (songList.length ?? 0));
   const isPlayPage = location.pathname.startsWith('/play');
   function handleButtonClick() {
     navigate(-1);
@@ -29,6 +32,9 @@ export const NavSection = () => {
             </NavLink>
           </li>
         ))}
+        <li className={styles.layoutNavElement}>
+          <NavLink to={`/play/${randomValue}`}>랜덤</NavLink>
+        </li>
       </ul>
     </nav>
   );

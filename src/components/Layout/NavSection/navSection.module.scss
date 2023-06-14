@@ -40,15 +40,16 @@
     font-family: 'Nanum Myeongjo', serif;
     font-size: sizes.$FONT_SUBTITLE;
     font-weight: 700;
-    color: var(--color-dark30);
-    transition: color 0.2s ease-in;
+    color: var(--color-dark);
+    opacity: 0.3;
+    transition: opacity 0.2s ease-in;
 
     &:hover {
-      color: var(--color-dark50);
+      opacity: 0.7;
     }
 
     &.isActive {
-      color: var(--color-dark);
+      opacity: 1;
     }
   }
 
