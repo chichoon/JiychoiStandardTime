@@ -4,8 +4,8 @@
   @include flexbox.flexbox(center, center);
   padding: 4px 12px;
   font-family: 'Nanum Myeongjo', serif;
-  color: var(--color-dark);
+  color: var(--color-text1);
   white-space: nowrap;
-  background-color: var(--color-middle50);
+  background-color: var(--color-secondary1);
   border-radius: 10px;
 }

@@ -22,27 +22,19 @@
   padding: 5px;
   font-size: sizes.$FONT_NORMAL;
   line-height: sizes.$FONT_NORMAL;
-  color: var(--color-dark);
+  color: var(--color-text1);
   user-select: none;
   transition: background-color 0.2s;
 
-  &.songAvailable {
-    background-color: var(--color-middle30);
-
-    &:hover {
-      background-color: var(--color-middle50);
-    }
+  &.otherMonthDate {
+    opacity: 0.2;
   }
 
-  &.otherMonthDate {
-    color: var(--color-dark30);
+  &.songAvailable {
+    background-color: var(--color-secondary2);
 
-    &.songAvailable {
-      background-color: var(--color-middle10);
-
-      &:hover {
-        background-color: var(--color-middle30);
-      }
+    &:hover {
+      background-color: var(--color-secondary1);
     }
   }
 

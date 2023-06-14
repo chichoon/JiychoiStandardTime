@@ -22,7 +22,7 @@
     font-size: sizes.$FONT_SUBTITLE;
     font-weight: 700;
     line-height: 24px;
-    color: var(--color-dark);
+    color: var(--color-text1);
     text-overflow: ellipsis;
     white-space: nowrap;
   }
@@ -32,7 +32,7 @@
     overflow: hidden;
     font-size: sizes.$FONT_SMALL;
     line-height: 24px;
-    color: var(--color-dark50);
+    color: var(--color-text2);
     text-overflow: ellipsis;
     white-space: nowrap;
   }

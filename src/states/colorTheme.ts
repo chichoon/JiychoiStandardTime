@@ -9,7 +9,7 @@ const colorThemeSlice = createSlice({
   reducers: {
     setTheme: (_, action: PayloadAction<string>) => {
       const newColorTheme = action.payload;
-      document.documentElement.setAttribute('color-theme', newColorTheme);
+      document.documentElement.setAttribute('color-primary', newColorTheme);
       store.set('colorTheme', newColorTheme);
       return newColorTheme;
     },
@@ -30,7 +30,7 @@ const colorThemeSlice = createSlice({
           newColorTheme = 'theme-sunrise';
           break;
       }
-      document.documentElement.setAttribute('color-theme', newColorTheme);
+      document.documentElement.setAttribute('color-primary', newColorTheme);
       store.set('colorTheme', newColorTheme);
       return newColorTheme;
     },

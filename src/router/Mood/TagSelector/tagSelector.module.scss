@@ -8,7 +8,7 @@
     margin-bottom: 8px;
     font-family: 'Nanum Myeongjo', serif;
     font-size: sizes.$FONT_NORMAL;
-    color: var(--color-dark50);
+    color: var(--color-text2);
   }
 
   .tagList {
@@ -20,7 +20,7 @@
     margin-bottom: 16px;
     overflow: auto;
     font-family: 'Nanum Myeongjo', serif;
-    border: 1px solid var(--color-dark30);
+    border: 1px solid var(--color-border);
     border-radius: 4px;
 
     li {

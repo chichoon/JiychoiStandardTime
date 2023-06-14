@@ -21,13 +21,13 @@
     z-index: levels.$HOVER_BUTTON_INNER;
     width: 30px;
 
-    :root[color-theme='theme-sunrise'] &,
-    :root[color-theme='theme-daylight'] & {
-      fill: var(--color-dark50);
+    :root[color-primary='theme-sunrise'] &,
+    :root[color-primary='theme-daylight'] & {
+      fill: var(--color-text2);
     }
 
-    :root[color-theme='theme-sunset'] &,
-    :root[color-theme='theme-night'] & {
+    :root[color-primary='theme-sunset'] &,
+    :root[color-primary='theme-night'] & {
       fill: colors.$WHITE;
     }
   }
@@ -39,19 +39,19 @@
   width: 100%;
   height: 100%;
 
-  :root[color-theme='theme-sunrise'] & {
+  :root[color-primary='theme-sunrise'] & {
     background-color: colors.$THEME_SUNRISE;
   }
 
-  :root[color-theme='theme-daylight'] & {
+  :root[color-primary='theme-daylight'] & {
     background-color: colors.$THEME_DAYLIGHT;
   }
 
-  :root[color-theme='theme-sunset'] & {
+  :root[color-primary='theme-sunset'] & {
     background-color: colors.$THEME_SUNSET;
   }
 
-  :root[color-theme='theme-night'] & {
+  :root[color-primary='theme-night'] & {
     background-color: colors.$THEME_NIGHT;
   }
 }
@@ -65,19 +65,19 @@
   content: '';
   transition: 0.2s linear;
 
-  :root[color-theme='theme-sunrise'] & {
+  :root[color-primary='theme-sunrise'] & {
     background-color: colors.$THEME_DAYLIGHT;
   }
 
-  :root[color-theme='theme-daylight'] & {
+  :root[color-primary='theme-daylight'] & {
     background-color: colors.$THEME_SUNSET;
   }
 
-  :root[color-theme='theme-sunset'] & {
+  :root[color-primary='theme-sunset'] & {
     background-color: colors.$THEME_NIGHT;
   }
 
-  :root[color-theme='theme-night'] & {
+  :root[color-primary='theme-night'] & {
     background-color: colors.$THEME_SUNRISE;
   }
 }

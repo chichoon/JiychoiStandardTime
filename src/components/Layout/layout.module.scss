@@ -9,20 +9,20 @@
   height: 100vh;
   padding: 20px 0;
 
-  :root[color-theme='theme-sunrise'] & {
-    background: linear-gradient(var(--color-theme1), var(--color-theme2) 25%, var(--color-theme3));
+  :root[color-primary='theme-sunrise'] & {
+    background: linear-gradient(var(--color-primary1), var(--color-primary2) 25%, var(--color-primary3));
   }
 
-  :root[color-theme='theme-daylight'] & {
-    background: linear-gradient(var(--color-theme1), var(--color-theme2) 25%, var(--color-theme3));
+  :root[color-primary='theme-daylight'] & {
+    background: linear-gradient(var(--color-primary1), var(--color-primary2) 25%, var(--color-primary3));
   }
 
-  :root[color-theme='theme-sunset'] & {
-    background: linear-gradient(var(--color-theme1), var(--color-theme2) 75%, var(--color-theme3));
+  :root[color-primary='theme-sunset'] & {
+    background: linear-gradient(var(--color-primary1), var(--color-primary2) 75%, var(--color-primary3));
   }
 
-  :root[color-theme='theme-night'] & {
-    background: linear-gradient(var(--color-theme1), var(--color-theme2) 75%, var(--color-theme3));
+  :root[color-primary='theme-night'] & {
+    background: linear-gradient(var(--color-primary1), var(--color-primary2) 75%, var(--color-primary3));
   }
 }
 
@@ -56,14 +56,14 @@
     margin-bottom: 4px;
     font-family: 'Gowun Batang', serif;
     font-size: sizes.$FONT_TITLE;
-    color: var(--color-dark);
+    color: var(--color-text1);
     text-align: center;
     user-select: none;
   }
 
   .layoutSubTitle {
     font-family: Raleway, sans-serif;
-    color: var(--color-dark50);
+    color: var(--color-text2);
     text-align: center;
     letter-spacing: 0.5px;
     user-select: none;
