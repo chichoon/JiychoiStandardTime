@@ -2,6 +2,8 @@ import { Dispatch, SetStateAction } from 'react';
 import { Dayjs } from 'dayjs';
 import cx from 'classnames';
 
+import { MAXIMUM_DATE, MINIMUM_DATE } from 'utils/constants';
+
 import styles from './calendarSelectMonth.module.scss';
 
 interface Props {
@@ -14,6 +16,7 @@ const CalendarSelectMonth = ({ date, setDate, setIsSelectMonthOpen }: Props) => 
   const monthList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
   function handleSelectMonthButtonClick(month: number) {
+    if (date.month(month - 1).isAfter(MAXIMUM_DATE) || date.month(month - 1).isBefore(MINIMUM_DATE)) return;
     setDate((prevState) => prevState.month(month - 1));
     setIsSelectMonthOpen(false);
   }
