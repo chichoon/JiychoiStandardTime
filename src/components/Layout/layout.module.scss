@@ -50,7 +50,7 @@
   padding: sizes.$LAYOUT_PADDING;
   background-color: var(--container-background-color);
   border-radius: sizes.$LAYOUT_BORDER_RADIUS;
-  box-shadow: 0 0 16px 4px var(--color-light30);
+  box-shadow: colors.$BOX_SHADOW;
 
   .layoutTitle {
     margin-bottom: 4px;

@@ -15,7 +15,7 @@
   overflow: hidden;
   border: 5px solid colors.$WHITE;
   border-radius: 35px;
-  box-shadow: 0 0 16px 4px var(--color-light30);
+  box-shadow: colors.$BOX_SHADOW;
 
   svg {
     z-index: levels.$HOVER_BUTTON_INNER;
