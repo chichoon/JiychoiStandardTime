@@ -7,6 +7,7 @@
 
 .selectMonthButton {
   transition: background-color 0.2s;
+  color: var(--color-text1);
 
   &:hover {
     background-color: var(--color-secondary2);
