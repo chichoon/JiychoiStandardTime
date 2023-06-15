@@ -14,7 +14,7 @@ export const Layout = () => {
       <div className={styles.layoutWrapper}>
         <div className={styles.layoutContainer}>
           <header>
-            <h1 className={styles.layoutTitle}>#지최표준시</h1>
+            <h1 className={styles.layoutTitle}>지최표준시</h1>
             <h2 className={styles.layoutSubTitle}>jiychoi standard time</h2>
             <NavSection />
           </header>
